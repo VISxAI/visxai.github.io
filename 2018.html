@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1st VISxAI Workshop at IEEE VIS 2018</title>
+    <link rel="stylesheet"
+          href="node_modules/bootswatch/dist/sandstone/bootstrap.css">
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans"
+          rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'IBM Plex Sans',  sans-serif;
+            margin-bottom: 50px;
+        }
+
+        .vxa {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        td {
+            padding: 2pt 6pt;
+            vertical-align: top;
+        }
+
+        a {
+            font-weight: bold;
+        }
+
+        .schedule {
+            white-space: nowrap;
+        }
+    </style>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+            crossorigin="anonymous"></script>
+    <script src="node_modules/bootstrap/js/dist/util.js"></script>
+    <script src="node_modules/bootstrap/js/dist/collapse.js"></script>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><span class="vxa">VISxAI</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarColor03" aria-controls="navbarColor03"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav mr-auto">
+            <!--<li class="nav-item">-->
+                <!--<a class="nav-link" href="submit.html">SUBMIT (07/12)</a>-->
+            <!--</li>-->
+            <li class="nav-item">
+                <a class="nav-link" href="program.html">Program</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#dates">Dates</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#call">CfP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#orga">Organizers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#pc">PC</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container" style="margin-top: 12pt;">
+
+    <div class="float-right">
+
+        <!--<img src="img/logo.png" height="70"/>-->
+        <img src="img/logo_v2.png" height="70"/>
+    </div>
+    <!--<div style="position: absolute; right:5px;">-->
+    <!--</div>-->
+
+    <h2>1st Workshop on <br> <b>Visualization for AI Explainability</b></h2>
+    <p>October 22, 2018 at IEEE VIS in Berlin, Germany</p>
+
+    
+    <p>
+        The role of visualization in artificial intelligence (AI) gained
+        significant attention in recent years. With the growing complexity of AI
+        models, the critical need for understanding their inner-workings has
+        increased. Visualization is potentially a powerful technique to fill
+        such a critical need.
+    </p>
+    <p>
+        The goal of this workshop is to initiate a call for “explainables” that
+        explain how AI techniques work using visualizations. We believe the VIS
+        community can leverage their expertise in creating visual narratives to
+        bring new insight into the often obfuscated complexity of AI systems.
+
+    </p>
+
+
+    <p class="text-center">
+
+        <img class="img-fluid" src="img/examples.png">
+    <div class="figure-caption"> Examples of blog posts using interactive
+        visualizations to (1) explain general concepts of AI models and (2)
+        communicate experimental insights when playing with AImodels.
+        (a) <a href="https://distill.pub/2017/momentum/" target="_blank">Why
+            Momentum Really Works</a> by Gabriel Goh;
+        (b) <a href="http://playground.tensorflow.org/" target="_blank">Tensorflow
+            Playground</a> by Smilkov, Carter, et.al.;
+        (c) <a href="http://formafluens.io/client/mix10.html">FormaFluens Data
+            Experiment</a> by Strobelt, Phibbs, Martino.
+    </div>
+    </p>
+
+        <h2> Program Overview </h2>
+    <table style="padding: 5pt;">
+        <tr>
+            <td class="schedule">2:20 -- 2:25</td>
+            <td><b>Welcome from the Organizers</b></td>
+        </tr>
+        <tr>
+            <td class="schedule">2:25 -- 3:10</td>
+            <td><b>Keynote: Been Kim (Google Brain)</b>
+                <br><b>Towards interpretability for everyone: Testing with
+                    Concept Activation Vectors (TCAV)</b>
+                <br>
+                The ultimate goal of interpretability is to help users gain
+                insights into the model for more responsible use of ML. Unlike
+                the majority of subfields in ML, interpretable ML requires
+                studying how humans parse complex information and exploring
+                effective ways to communicate such information. This human
+                aspect becomes even more critical when developing
+                interpretability methods for non-ML experts/layer users --- my
+                core research agenda. I will share some interpretability methods
+                that are designed with or without considering human aspect, and
+                where they succeeded or fall short. I will take a deeper dive in
+                one of my recent work - testing with concept activation vectors
+                (TCAV) - a post-training interpretability method for complex
+                models, such as neural network. This method provides an
+                interpretation of a neural net's internal state in terms of
+                human-friendly, high-level concepts instead of low-level input
+                features. Most importantly, I will share some open questions in
+                interpretability methods that are calling for visualization
+                community's expertise.
+    
+                <!--"I am interested in designing high-performance machine learning methods that make sense to humans.-->
+                <!--My focus is building interpretability method for already-trained models or building inherently interpretable models.-->
+                <!--In particular, I believe the language of explanations should include higher-level, human-friendly concepts-->
+                <!--so that it can make sense to everyone."-->
+            </td>
+        </tr>
+        <tr>
+            <td class="schedule">3:10 -- 3:35</td>
+            <td><b>Session I: Neural Networks and Deep Learning </b><br>
+                <a href="http://eprints.uwe.ac.uk/37807/1/visualising_networks.html">Visualising
+                    State Space Representations of Long Short-Term Memory
+                    Networks</a> -- Emmanuel M. Smith, Jim Smith, Phil Legg and
+                Simon Francis<br>
+                <a href="http://hdc.cs.arizona.edu/~mwli/grandtour/index.html">Visualizing
+                    neuron activations of neural networks with the grand
+                    tour</a> -- Mingwei Li, Zhenge Zhao and Carlos
+                Scheidegger"<br>
+                <a href="https://github.com/philippschmitt/embodied-ml">
+                    Embodied Machine Learning: An educational, human MNIST
+                    classifier</a> -- Philipp Schmitt<br>
+    
+            </td>
+        </tr>
+        <tr>
+            <td class="schedule">3:35 -- 4:00</td>
+            <td><b>Session II: Projections and Dimensionality Reduction </b>
+                <br>
+                <a href="https://roadsfromabove.netlify.com/"> Roads from
+                    Above</a> -- Greg More, Slaven Marusic and Caihao Cui <br>
+                <a href="https://idyll.pub/post/visxai-dimensionality-reduction-1dbad0a67a092b007c526a45/">
+                    The Beginner's Guide to Dimensionality Reduction</a> --
+                Matthew Conlen and Fred Hohman<br>
+                <a href="https://visxprojections.dbvis.de/"> Dimension,
+                    Distances, or Neighborhoods? Projection Literacy for the
+                    Analysis of Multivariate Data </a> -- Dirk Streeb, Rebecca
+                Kehlbeck, Dominik Jäckle and Mennatallah El-Assady
+    
+    
+            </td>
+        </tr>
+        <tr>
+            <td class="schedule">4:00 -- 4:20</td>
+            <td><b>Coffee Break with Poster Session</b></td>
+        </tr>
+        <tr>
+            <td class="schedule">4:20 -- 4:45</td>
+            <td><b>Session III: Data Distribution and Bias </b><br>
+                <a href="https://www.jgoertler.com/visual-exploration-gaussian-processes/">
+                    A Visual Exploration of Gaussian Processes</a> -- Jochen
+                Görtler, Rebecca Kehlbeck and Oliver Deussen <br>
+                <a href="https://spinthil.github.io/towards-an-interpretable-latent-space/">
+                    Towards an Interpretable Latent Space </a> -- Thilo Spinner,
+                Jonas Körner, Jochen Görtler and Oliver Deussen <br>
+                <a href="https://mybinder.org/v2/gh/Jindong-Explainable-AI/Bias_in_Machine_Learning/master?filepath=ML_Bias.ipynb
+    "> Understanding Bias in Machine Learning </a> -- Jindong Gu and Daniela Oelke
+    
+            </td>
+        </tr>
+        <tr>
+            <td class="schedule">4:45 -- 5:10</td>
+            <td><b>Session IV: Machine Learning Processes and Explanation
+                    Strategies </b><br>
+                <a href="https://bib.dbvis.de/publications/details/787">Minions,
+                    Sheep, and Fruits: Metaphorical Narratives to Explain
+                    Artificial Intelligence and Build Trust</a> -- Wolfgang
+                Jentner, Rita Sevastjanova, Florian Stoffel, Daniel Keim, Jurgen
+                Bernard and Mennatallah El-Assady <br>
+                <a href="http://aimacode.github.io/aima-javascript/5-Adversarial-Search/">
+                    Aimacode Javascript - Minimax</a> -- Michael Kawano<br>
+                <a href="http://verbalization.lingvis.io/"> Going beyond
+                    Visualization: Verbalization as Complementary Medium to
+                    Explain Machine Learning Models</a> -- Rita Sevastjanova,
+                Fabian Beck, Basil Ell, Cagatay Turkay, Rafael Henkin, Miriam
+                Butt, Daniel Keim and Mennatallah El-Assady
+    
+    
+            </td>
+        </tr>
+        <tr>
+            <td class="schedule">5:10 -- 5:55</td>
+            <td><b>Moderated Panel Discussion </b></td>
+        </tr>
+        <tr>
+            <td class="schedule">5:55 -- 6:00</td>
+            <td><b>Best submission ceremony and "Auf Wiedersehen" :)</b></td>
+        </tr>
+        <tr>
+            <td class="schedule">8:00 -- ...</td>
+            <td><b><a href="http://eastcoastparty.rocks">VISxAI Eastcoast
+                        party </a></b></td>
+        </tr>
+    </table>
+    
+    
+    <h2> Posters </h2>
+    <a href="http://www.cs.williams.edu/~iris/res/bkt/">What is Bayesian
+        Knowledge Tracing?</a> -- Young Cho, Grace Mazzarella, Kelvin Tejeda,
+    Tongyu Zhou and Iris Howley <br>
+    <a href="https://www.bbvadata.com/recsys/">Recsys: what is a recommendation
+        in the Age of Machine Learning</a> -- Iskra Velitchkova, Juan Arévalo
+    and Marco Creatura<br>
+    <a href="https://sauln.github.io/blog/tda_explanations.html	">Understanding
+        ML through Topological Data Analysis </a> -- Nathaniel Saul and Dustin L
+    Arendt<br>
+    <a href="http://stelling.cc/machineplay/">Explaining neural network concepts
+        through an interactive visualization</a> -- Roberto Stelling and Adriana
+    S Vivacqua<br>
+    <a href="http://vis-server.win.tue.nl/visxai/">Plainability: Explainability
+        for 1-Dimensional Temporal Inputs</a> -- Humberto Simon Garcia
+    Caballero, Michel Westenberg and Binyam Gebre
+
+    <h2 id="dates">Important Dates</h2>
+    <pre>
+    July 12, 2018, 5:00pm PDT: Blog/Notebooks + Position Paper Submission
+    August 2, 2018: Author Notification
+    September 3, 2018: Camera-ready Copy for Accepted Submissions
+    September 7, 2018: VIS Early Bird Registration Ends
+    October 22 -- Workshop in Berlin at IEEE VIS 2018
+    </pre>
+
+    <h2 id="call">Call for Participation</h2>
+	
+	<p> <strong>SUBMISSION CLOSED</strong></p>
+	
+    <p>
+        To make our work more accessible to the general audience, we are
+        soliciting
+        submissions in a novel format: blog-style posts and jupyter-like
+        notebooks. In addition we also accept position papers in a more
+        traditional
+        form.
+
+        Please contact us, if you want to submit a original work in another
+        format. Email: <a href="mailto:orga.visxai@gmail.com">orga.visxai at
+        gmail.com</a>
+
+    </p>
+
+    <h4>Explainables (Blogs, Markup, and Notebooks) </h4>
+    <p>Explainable submissions are the core element of the workshop, as this
+        workshop aims to be a platform for explanatory visualizations focusing
+        on AI
+        techniques.</p>
+
+    <p>Authors have the freedom to use whatever templates and formats they
+        like.
+        However, the narrative should be visual and interactive, and walk
+        readers
+        through a keen understanding on the ML technique or application. Authors
+        may
+        wish to write a <a href="https://distill.pub">Distill-style</a> blog
+        post (format),
+        interactive <a href="https://idyll-lang.org/">Idyll</a> markup,
+        or a <a href="http://jupyter.org">Jupyter</a> or <a
+                href="https://beta.observablehq.com/">Observable</a> notebook
+        that
+        integrates codes, visualizations to
+        tell the story.
+    </p>
+
+    <p>
+        Here are a few examples of visual explanations of AI methods in these
+        types
+        of formats:
+    <ul>
+        <li>[blog-style]
+            <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/"
+               target="_blank">http://www.r2d3.us/visual-intro-to-machine-learning-part-1/</a>
+        </li>
+        <li>[blog-style]
+            <a href="http://formafluens.io/client/mix10.html" target="_blank">http://formafluens.io/client/mix10.html</a>
+        </li>
+        <li>[markup]
+            <a href="https://idyll-lang.org/gallery/the-barnes-hut-approximation"
+               target="_blank">https://idyll-lang.org/gallery/the-barnes-hut-approximation</a>
+        </li>
+        <li>[notebook]
+            <a href="https://beta.observablehq.com/@nstrayer/t-sne-explained-in-plain-javascript"
+               target="_blank">https://beta.observablehq.com/@nstrayer/t-sne-explained-in-plain-javascript</a>
+        </li>
+        <li>[markup]
+            <a href="http://nbviewer.jupyter.org/github/agconti/kaggle-titanic/blob/master/Titanic.ipynb"
+               target="_blank">http://nbviewer.jupyter.org/github/agconti/kaggle-titanic/blob/master/Titanic.ipynb</a>
+        </li>
+        <li>[blog-style]
+            <a href="https://distill.pub/2017/momentum/" target="_blank">https://distill.pub/2017/momentum/</a>
+        </li>
+    </ul>
+
+    </p>
+
+    <p>While these examples are informative and excellent, we hope the
+        visualization community will think about ways to creatively expand on
+        such foundational work to explain AI methods using novel interactions
+        and visualizations often present at IEEE VIS.
+        Please contact us, if you want to submit a original work in another
+        format. Email: <a href="mailto:orga.visxai@gmail.com">orga.visxai at
+            gmail.com</a>
+    </p>
+    <p>
+        The best works will be invited to submit their extended work to the
+        online publishing platform distill.pub to generate a cite-able
+        publication for authors.
+    </p>
+
+
+    <h4>Position Papers</h4>
+    <p>We will also accept position papers about impact and role of explainables
+        for VIS in AI. Submissions should be no more than 6 pages long and
+        formatted
+        according to the <a
+                href="http://junctionpublishing.org/vgtc/Tasks/camera.html">VGTC
+            formatting guidelines</a>.
+        Some good example of a position papers (not all for AI) can be found
+        here:
+    <ul>
+        <li><a href="https://graphics.cs.wisc.edu/Papers/2018/Gle18/viscomp.pdf"
+               target="_blank">Considerations for Visualizing Comparison</a>
+        </li>
+        <li>
+            <a href="https://bib.dbvis.de/uploadedFiles/RisktheDriftStretchingDisciplinaryBoundariesthroughCriticalCollaborationsbetweentheHumanitiesandVisualization.pdf"
+               target="_blank">Risk the Drift! Stretching Disciplinary
+                Boundaries through Critical Collaborations between the
+                Humanities and Visualization</a></li>
+        <li>
+            <a href="https://www.sciencedirect.com/science/article/pii/S2468502X17300086"
+               target="_blank">Towards better analysis of machine learning
+                models: A visual analytics perspective</a></li>
+        <li>
+            <a href="http://www.sci.utah.edu/publications/Che2017a/Theoretical-Advances-Visualization-2017.pdf"
+               target="_blank">Pathways for Theoretical Advances in
+                Visualization</a></li>
+
+    </ul>
+
+    </p>
+
+    <h2 id="orga">Organizers <span style="font-size: small">(alphabetic)</span>
+    </h2>
+
+    <p>
+        Mennatallah El-Assady - University of Konstanz<br/>
+        Duen Horng (Polo) Chau - Georgia Tech<br/>
+        Adam Perer - Carnegie Mellon University<br/>
+        Hendrik Strobelt - IBM Research, MIT-IBM Watson AI Lab<br/>
+        Fernanda Viégas - Google Brain
+    </p>
+
+    <h2 id="pc">Program Committee</h2>
+    Adam Perer<br> 
+Alexander Rush<br>
+Arvind Satyanarayan<br>
+Brady Redfearn<br>
+Carlos Scheidegger<br>
+Jaegul Choo<br>
+Christian Bors<br>
+Christopher Collins<br>
+David Bau<br>
+Duen Horng (Polo) Chau<br>
+Dustin Arendt<br>
+Dylan Cashman<br>
+Lana El Sanyoura<br> 
+Fernanda Viégas<br>
+Fred Hohman<br>
+Hendrik Strobelt<br> 
+Iris Howley<br>
+Juergen Bernard<br>
+Kanit Wongsuphasawat<br>
+Martin Wattenberg<br> 
+Matthew Conlen<br>
+Mennatallah El-Assady<br>
+Minsuk Kahng<br>
+Rita Borgo<br>
+Sebastian Gehrmann<br>
+Tommy Dang<br>
+Yamini Bansal<br>
+Yang Wang<br>
+
+    <p>&nbsp;</p>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-119596896-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {dataLayer.push(arguments);}
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119596896-1');
+    </script>
+
+
+</div>
+
+
+</body>
+</html>
