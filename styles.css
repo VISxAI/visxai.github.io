@@ -1,0 +1,21 @@
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin-bottom: 50px;
+}
+
+.vxa {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+a {
+    font-weight: bold;
+}
+
+td {
+    padding: 2pt 6pt;
+    vertical-align: top;
+}
+
+.schedule {
+    white-space: nowrap;
+}
