@@ -1,268 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>2nd VISxAI Workshop at IEEE VIS 2019</title>
-    <link rel="stylesheet"
-          href="node_modules/bootswatch/dist/sandstone/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootswatch/dist/sandstone/bootstrap.css">
 
-    <link rel="stylesheet"
-          href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans" rel="stylesheet">
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
     <script src="node_modules/bootstrap/js/dist/util.js"></script>
     <script src="node_modules/bootstrap/js/dist/collapse.js"></script>
 
 
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/"><span class="vxa">VISxAI</span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarColor03" aria-controls="navbarColor03"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><span class="vxa">VISxAI</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor03">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="submit.html">SUBMIT (07/24)</a>
-            </li>
-            <!-- <li class="nav-item">
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="submit.html">SUBMIT (07/24)</a>
+                </li>
+                <!-- <li class="nav-item">
                 <a class="nav-link" href="#program">Program</a>
             </li> -->
-            <li class="nav-item">
-                <a class="nav-link" href="#dates">Dates</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#call">CFP</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#orga">Organizers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#pc">PC</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="2018.html">Previous Workshop</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+                <li class="nav-item">
+                    <a class="nav-link" href="#dates">Dates</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#call">CFP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#orga">Organizers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pc">PC</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="2018.html">Previous Workshop</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 
-<div class="container" style="margin-top: 12pt;">
+    <div class="container" style="margin-top: 12pt;">
 
-    <div class="float-right">
+        <div class="float-right">
 
-        <!--<img src="img/logo.png" height="70"/>-->
-        <img src="img/logo_v2.png" height="70"/>
-    </div>
-    <!--<div style="position: absolute; right:5px;">-->
-    <!--</div>-->
+            <!--<img src="img/logo.png" height="70"/>-->
+            <img src="img/logo_v2.png" height="70" />
+        </div>
+        <!--<div style="position: absolute; right:5px;">-->
+        <!--</div>-->
 
-    <h2>2<sup>nd</sup> Workshop on <br> <b>Visualization for AI Explainability</b></h2>
-    <p>October XX, 2019 at IEEE VIS in Berlin, Germany</p>
+        <h2>2<sup>nd</sup> Workshop on <br> <b>Visualization for AI Explainability</b></h2>
+        <p>October XX, 2019 at IEEE VIS in Vancouver, Canada</p>
 
 
-    <!-- <p class="text-center" style="font-size: 14pt;">
+        <!-- <p class="text-center" style="font-size: 14pt;">
         <b>PROGRAM IS ONLINE. <a href="program.html"> CLICK HERE !!!</a> </b>
     </p> -->
 
-    <p>
-        The role of visualization in artificial intelligence (AI) gained
-        significant attention in recent years. With the growing complexity of AI
-        models, the critical need for understanding their inner-workings has
-        increased. Visualization is potentially a powerful technique to fill
-        such a critical need.
-    </p>
-    <p>
-        The goal of this workshop is to initiate a call for “explainables” that
-        explain how AI techniques work using visualizations. We believe the VIS
-        community can leverage their expertise in creating visual narratives to
-        bring new insight into the often obfuscated complexity of AI systems.
+        <p>
+            The role of visualization in artificial intelligence (AI) gained
+            significant attention in recent years. With the growing complexity of AI
+            models, the critical need for understanding their inner-workings has
+            increased. Visualization is potentially a powerful technique to fill
+            such a critical need.
+        </p>
+        <p>
+            The goal of this workshop is to initiate a call for “explainables” that
+            explain how AI techniques work using visualizations. We believe the VIS
+            community can leverage their expertise in creating visual narratives to
+            bring new insight into the often obfuscated complexity of AI systems.
 
-    </p>
+        </p>
 
 
-    <!--<p class="text-center" style="font-size: 14pt;">-->
+        <!--<p class="text-center" style="font-size: 14pt;">-->
         <!--<b>PROGRAM IS ONLINE. <a href="program.html"> CLICK HERE !!!</a> </b>-->
-    <!--</p>-->
+        <!--</p>-->
 
-    <p class="text-center">
+        <p class="text-center">
 
-    <img class="img-fluid" src="img/examples.png">
-    <div class="figure-caption"> Examples of blog posts using interactive visualizations to (1) explain general concepts of AI models and (2) communicate experimental insights when playing with AI models.
-    (a) <a href="https://distill.pub/2017/momentum/" target="_blank">Why
-        Momentum Really Works</a> by Gabriel Goh;
-    (b) <a href="http://playground.tensorflow.org/" target="_blank">Tensorflow
-        Playground</a> by Smilkov, Carter, et.al.;
-    (c) <a href="http://formafluens.io/client/mix10.html">FormaFluens Data
-        Experiment</a> by Strobelt, Phibbs, Martino.
-    </div>
-    </p>
+            <img class="img-fluid" src="img/examples.png">
+            <div class="figure-caption"> Examples of blog posts using interactive visualizations to (1) explain general
+                concepts of AI models and (2) communicate experimental insights when playing with AI models.
+                (a) <a href="https://distill.pub/2017/momentum/" target="_blank">Why
+                    Momentum Really Works</a> by Gabriel Goh;
+                (b) <a href="http://playground.tensorflow.org/" target="_blank">Tensorflow
+                    Playground</a> by Smilkov, Carter, et.al.;
+                (c) <a href="http://formafluens.io/client/mix10.html">FormaFluens Data
+                    Experiment</a> by Strobelt, Phibbs, Martino.
+            </div>
+        </p>
 
-    <h2 id="dates">Important Dates</h2>
-    <pre>
+        <h2 id="dates">Important Dates</h2>
+        <pre>
 July 24, 2019, 5:00pm PDT: Blog/Notebooks + Position Paper Submission
 August 2, 2019: Author Notification
 September 3, 2019: Camera-ready Copy for Accepted Submissions
-September 7, 2019: VIS Early Bird Registration Ends
-October XX -- Workshop in Berlin at IEEE VIS 2019
+September XX, 2019: VIS Early Bird Registration Ends
+October XX -- Workshop in Vancouver at IEEE VIS 2019
     </pre>
 
-    <h2 id="call">Call for Participation</h2>
-	
-	<!-- <p> <strong>SUBMISSION CLOSED</strong></p> -->
-	
-    <p>
-        To make our work more accessible to the general audience, we are soliciting submissions in a novel format: blog-style posts and jupyter-like notebooks. In addition we also accept position papers in a more traditional form.
+        <h2 id="call">Call for Participation</h2>
 
-        Please contact us, if you want to submit a original work in another format. Email: <a href="mailto:orga.visxai@gmail.com">orga.visxai at gmail.com</a>
+        <!-- <p> <strong>SUBMISSION CLOSED</strong></p> -->
 
-    </p>
+        <p>
+            <!-- To make our work more accessible to the general audience, we are soliciting submissions in a novel format:
+            blog-style posts and jupyter-like notebooks. In addition we also accept position papers in a more
+            traditional form.
 
-    <h4>Explainables (Blogs, Markup, and Notebooks) </h4>
-    <p>Explainable submissions are the core element of the workshop, as this
-        workshop aims to be a platform for explanatory visualizations focusing
-        on AI
-        techniques.</p>
-
-    <p>Authors have the freedom to use whatever templates and formats they like. However, the narrative should be visual and interactive, and walk readers through a keen understanding on the ML technique or application. Authors may wish to write a <a href="https://distill.pub">Distill-style</a> blog post (format), interactive <a href="https://idyll-lang.org/">Idyll</a> markup, or a <a href="http://jupyter.org">Jupyter</a> or <a href="https://beta.observablehq.com/">Observable</a> notebook that integrates code, text, and visualization to tell the story.
-    </p>
-
-    <p>
-        Here are a few examples of visual explanations of AI methods in these
-        types
-        of formats:
-    <ul>
-        <li>[blog-style]
-            <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/"
-               target="_blank">A Visual Introduction to Machine Learning</a>
-        </li>
-        <li>[blog-style]
-            <a href="http://formafluens.io/client/mix10.html"
-               target="_blank">Art-Inspired Data Experiments on Neural Network Model Decay</a>
-        </li>
-        <li>[blog-style]
-            <a href="https://research.google.com/bigpicture/attacking-discrimination-in-ml/" target="_blank">Attacking Discrimination with Smarter Machine Learning</a>
-        </li>
-        <li>[markup]
-            <a href="https://parametric.press/issue-01/the-myth-of-the-impartial-machine/" target="_">The Myth of the
-            Impartial Machine</a>
-        </li>
-        <li>[markup]
-            <a href="https://idyll.pub/post/visxai-dimensionality-reduction-1dbad0a67a092b007c526a45/"
-                target="_">The Beginner's Guide to Dimensionality Reduction</a>
-        </li>
-        <li>[notebook]
-            <a href="https://beta.observablehq.com/@nstrayer/t-sne-explained-in-plain-javascript"
-               target="_blank">t-SNE Explained in Plain JavaScript</a>
-        </li>
-        <li>[markup]
-            <a href="http://nbviewer.jupyter.org/github/agconti/kaggle-titanic/blob/master/Titanic.ipynb"
-               target="_blank">Titanic Machine Learning from Disaster</a>
-        </li>
-        <li>[blog-style]
-            <a href="https://distill.pub/2017/momentum/"
-               target="_blank">Why Momentum Really Works</a>
-        </li>
-    </ul>
-
-    </p>
-
-    <p>While these examples are informative and excellent, we hope the
-        visualization community will think about ways to creatively expand on
-        such foundational work to explain AI methods using novel interactions
-        and visualizations often present at IEEE VIS.
-        Please contact us, if you want to submit a original work in another
-        format. Email: <a href="mailto:orga.visxai@gmail.com">orga.visxai at
-            gmail.com</a>
-    </p>
-    <p>
-        The best works will be invited to submit their extended work to the
-        online publishing platform distill.pub to generate a cite-able
-        publication for authors.
-    </p>
+            Please contact us, if you want to submit a original work in another format. Email: <a
+                href="mailto:orga.visxai@gmail.com">orga.visxai at gmail.com</a> -->
 
 
-    <h4>Position Papers</h4>
-    <p>We will also accept position papers about impact and role of explainables
-        for VIS in AI. Submissions should be no more than 6 pages long and
-        formatted
-        according to the <a
-                href="http://junctionpublishing.org/vgtc/Tasks/camera.html">VGTC
-            formatting guidelines</a>.
-        Some good example of a position papers (not all for AI) can be found
-        here:
-    <ul>
-        <li><a href="https://graphics.cs.wisc.edu/Papers/2018/Gle18/viscomp.pdf"
-               target="_blank">Considerations for Visualizing Comparison</a>
-        </li>
-        <li>
-            <a href="https://bib.dbvis.de/uploadedFiles/RisktheDriftStretchingDisciplinaryBoundariesthroughCriticalCollaborationsbetweentheHumanitiesandVisualization.pdf"
-               target="_blank">Risk the Drift! Stretching Disciplinary
-                Boundaries through Critical Collaborations between the
-                Humanities and Visualization</a></li>
-        <li>
-            <a href="https://www.sciencedirect.com/science/article/pii/S2468502X17300086"
-               target="_blank">Towards better analysis of machine learning
-                models: A visual analytics perspective</a></li>
-        <li>
-            <a href="http://www.sci.utah.edu/publications/Che2017a/Theoretical-Advances-Visualization-2017.pdf"
-               target="_blank">Pathways for Theoretical Advances in
-                Visualization</a></li>
-
-    </ul>
-
-    </p>
-
-   <!-- <p> <strong>SUBMISSION CLOSED</strong></p> -->
 
 
-    <h2 id="orga">Organizers <span style="font-size: small">(alphabetic)</span>
-    </h2>
+        </p>
 
-    <p>
-        Mennatallah El-Assady - University of Konstanz<br/>
-        Fred Hohman - Georgia Tech<br />
-        Duen Horng (Polo) Chau - Georgia Tech<br/>
-        Adam Perer - Carnegie Mellon University<br/>
-        Hendrik Strobelt - IBM Research, MIT-IBM Watson AI Lab<br/>
-        Fernanda Viégas - Google Brain
-    </p>
+        <h4>Explainables (Blogs, Markup, and Notebooks) </h4>
+        <p>Explainable submissions are the core element of the workshop, as this
+            workshop aims to be a platform for explanatory visualizations focusing
+            on AI
+            techniques.</p>
 
-    <h2 id="pc">Program Committee</h2>
-    Coming soon!
+        <p>Authors have the freedom to use whatever templates and formats they like. However, the narrative should be
+            visual and interactive, and walk readers through a keen understanding on the ML technique or application.
+            Authors may wish to write a <a href="https://distill.pub">Distill-style</a> blog post (format), interactive
+            <a href="https://idyll-lang.org/">Idyll</a> markup, or a <a href="http://jupyter.org">Jupyter</a> or <a
+                href="https://beta.observablehq.com/">Observable</a> notebook that integrates code, text, and
+            visualization to tell the story.
+        </p>
+
+        <p>
+            Here are a few examples of visual explanations of AI methods in these
+            types
+            of formats:
+            <ul>
+                <li>[blog-style]
+                    <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/" target="_blank">A Visual
+                        Introduction to Machine Learning</a>
+                </li>
+                <li>[blog-style]
+                    <a href="http://formafluens.io/client/mix10.html" target="_blank">Art-Inspired Data Experiments on
+                        Neural Network Model Decay</a>
+                </li>
+                <li>[blog-style]
+                    <a href="https://research.google.com/bigpicture/attacking-discrimination-in-ml/"
+                        target="_blank">Attacking Discrimination with Smarter Machine Learning</a>
+                </li>
+                <li>[markup]
+                    <a href="https://parametric.press/issue-01/the-myth-of-the-impartial-machine/" target="_">The Myth
+                        of the
+                        Impartial Machine</a>
+                </li>
+                <li>[markup]
+                    <a href="https://idyll.pub/post/visxai-dimensionality-reduction-1dbad0a67a092b007c526a45/"
+                        target="_">The Beginner's Guide to Dimensionality Reduction</a>
+                </li>
+                <li>[notebook]
+                    <a href="https://beta.observablehq.com/@nstrayer/t-sne-explained-in-plain-javascript"
+                        target="_blank">t-SNE Explained in Plain JavaScript</a>
+                </li>
+                <li>[markup]
+                    <a href="http://nbviewer.jupyter.org/github/agconti/kaggle-titanic/blob/master/Titanic.ipynb"
+                        target="_blank">Titanic Machine Learning from Disaster</a>
+                </li>
+                <li>[blog-style]
+                    <a href="https://distill.pub/2017/momentum/" target="_blank">Why Momentum Really Works</a>
+                </li>
+            </ul>
+
+        </p>
+
+        <p>While these examples are informative and excellent, we hope the
+            Visualization&ML community will think about ways to creatively expand on
+            such foundational work to explain AI methods using novel interactions
+            and visualizations often present at IEEE VIS.
+            Please contact us, if you want to submit a original work in another
+            format. Email: <a href="mailto:orga.visxai@gmail.com">orga.visxai at
+                gmail.com</a>
+        </p>
+        <p> Note: We also accept more traditional papers that accompany an explainable.
+            Be aware that we require that the explainable must stand on its own.
+            The reviewers will evaluate the explainable (and might chose to ignore the paper).
+        </p>
+
+        <p>
+            We will The best works will be invited to submit their extended work to the
+            online publishing platform distill.pub to generate a cite-able
+            publication for authors.
+        </p>
 
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-119596896-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {dataLayer.push(arguments);}
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-119596896-1');
-    </script>
+        <!-- <p> <strong>SUBMISSION CLOSED</strong></p> -->
 
 
-</div>
+        <h2 id="orga">Organizers <span style="font-size: small">(alphabetic)</span>
+        </h2>
+
+        <p>
+            Adam Perer - Carnegie Mellon University<br />
+            Duen Horng (Polo) Chau - Georgia Tech<br />
+            Fernanda Viégas - Google Brain<br />
+            Fred Hohman - Georgia Tech<br />
+            Hendrik Strobelt - MIT-IBM Watson AI Lab<br />
+            Mennatallah El-Assady - University of Konstanz<br />
+        </p>
+
+        <h2 id="pc">Program Committee</h2>
+        Coming soon!
+
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119596896-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() { dataLayer.push(arguments); }
+
+            gtag('js', new Date());
+
+            gtag('config', 'UA-119596896-1');
+        </script>
+
+
+    </div>
 
 
 </body>
+
 </html>
