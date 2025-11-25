@@ -1201,15 +1201,177 @@ export const years: Record<number, YearData> = {
 			'The role of visualization in artificial intelligence (AI) gained significant attention in recent years. With the growing complexity of AI models, the critical need for understanding their inner-workings has increased. Visualization is potentially a powerful technique to fill such a critical need.',
 			"The goal of this workshop is to initiate a call for 'explainables' / 'explorables' that explain how AI techniques work using visualization. We believe the VIS community can leverage their expertise in creating visual narratives to bring new insight into the often obfuscated complexity of AI systems."
 		],
-		examples: [],
-		dates: [],
-		program: [],
+		examples: [
+			{
+				title: 'A Visual Exploration of Gaussian Processes',
+				url: 'https://distill.pub/2019/visual-exploration-gaussian-processes/',
+				authors: 'Görtler, Kehlbeck, and Deussen',
+				year: 2018
+			},
+			{
+				title: "The Beginner's Guide to Dimensionality Reduction",
+				url: 'https://idyll.pub/post/dimensionality-reduction-293e465c2a3443e8941b016d/',
+				authors: 'Conlen and Hohman',
+				year: 2018
+			},
+			{
+				title: 'FormaFluens Data Experiment',
+				url: 'http://formafluens.io/client/mix10.html',
+				authors: 'Strobelt, Phibbs, and Martino',
+				year: 2018
+			},
+			{
+				title: 'Attacking Discrimination with Smarter Machine Learning',
+				url: 'https://research.google.com/bigpicture/attacking-discrimination-in-ml/',
+				authors: 'Wattenberg, Viégas, and Hardt',
+				year: 2016
+			},
+			{
+				title: 'Tensorflow Playground',
+				url: 'http://playground.tensorflow.org/',
+				authors: 'Smilkov, Carter, et.al.',
+				year: 2016
+			},
+			{
+				title: 'The Myth of the Impartial Machine',
+				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
+				authors: 'Feng and Wu',
+				year: 2019
+			}
+		],
+		dates: [
+			{ date: 'July 31, 2019, anywhere', event: 'Explainables Submission' },
+			{ date: 'August 23, 2019', event: 'Author Notification' },
+			{ date: 'September 6, 2019', event: 'Camera-ready Copy for Accepted Submissions' },
+			{ date: 'September 20, 2019', event: 'VIS Early Bird Registration Ends' },
+			{ date: 'October 21, 2019', event: 'Workshop in Vancouver at IEEE VIS 2019' }
+		],
+		program: [
+			{ time: '2:20 -- 2:25', title: 'Welcome from the Organizers' },
+			{
+				time: '2:25 -- 3:20',
+				title: 'Keynote: Chris Olah (OpenAI)',
+				content:
+					'Zoom in: Features and Circuits as the Basic Unit of Neural Networks - Some of the most important transitions in science have involved a new visualization causing research to "zoom in" to a new level granularity. The microscope opened up cellular biology. Crystallography (among other methods) enabled the molecular revolution, where biology began characterizing and understanding specific proteins and genetic circuits. Is deep learning on the verge of a similar transition? Visualization techniques are beginning to reveal a rich world of interacting features inside neural networks. What happens if we take it seriously as an object of study?'
+			},
+			{
+				time: '3:20 -- 3:50',
+				title: 'Session I',
+				items: [
+					{
+						title: 'Statistical Distances and Their Implications to GAN Training',
+						url: 'https://qnkxsovc.gitlab.io/prob-vis/',
+						authors: 'Max Daniels'
+					},
+					{
+						title: 'What if we Reduce the Memory of an Artificial Doom Player?',
+						url: 'https://theo-jaunet.github.io/MemoryReduction/',
+						authors: 'Theo Jaunet, Romain Vuillemot, and Christian Wolf'
+					},
+					{
+						title: 'Interactive Feature Visualization in the Browser',
+						url: 'http://visxai.stefansietzen.at/',
+						authors: 'Stefan Sietzen and Manuela Waldner'
+					},
+					{
+						title: 'Demystifying Artificial Intelligence with Siemens AI Explainables',
+						url: 'https://wbt.siemens.com/filehosting/siplainables/',
+						authors:
+							'Daniela Oelke, Henning Reich, Andreas Stoffel, Christian Rohrdantz, Johannes Häußler, Victor Balanica, and Cecilia Bruhn'
+					}
+				]
+			},
+			{ time: '3:50 -- 4:10', title: 'Coffee Break' },
+			{
+				time: '4:10 -- 4:40',
+				title: 'Session II',
+				items: [
+					{
+						title:
+							'Analyzing the Design Space for Visualizing Neural Attention in Text Classification',
+						url: 'https://observablehq.com/@clpuc/analyzing-the-design-space-for-visualizing-neural-attenti',
+						authors:
+							'Denis Parra, Hernan Valdivieso, Andres Carvallo, Gabriel Rada, Katrien Verbert, and Tobias Schreck'
+					},
+					{
+						title: 'Deconstructing BERT: Visualizing the Inner Workings of Attention',
+						url: 'https://towardsdatascience.com/deconstructing-bert-part-2-visualizing-the-inner-workings-of-attention-60a16d86b5c1',
+						authors: 'Jesse Vig'
+					},
+					{
+						title: 'Remembrances of States Past',
+						url: 'https://observablehq.com/@krisrs1128/remembrances-of-states-past',
+						authors: 'Kris Sankaran'
+					}
+				]
+			},
+			{
+				time: '4:40 -- 5:15',
+				title: 'Session III',
+				items: [
+					{
+						title: 'Selecting the right tool for the job: a comparison of visualization algorithms',
+						url: 'https://mybinder.org/v2/gh/KrishnaswamyLab/visualization_selection/master?filepath=Selecting_the_right_tool_for_the_job.ipynb',
+						authors: 'Daniel Burkhardt, Scott Gigante, and Smita Krishnaswamy'
+					},
+					{
+						title: 'A Visual Introduction to Graphical Data Representations',
+						url: 'http://www.shawnfarris.io/research/graphicalDataRepresentations/',
+						authors: 'Shawn Farris'
+					},
+					{
+						title: 'Visual Explanations for Gradient Boosting Models',
+						url: 'https://github.com/MattJBritton/ForestfortheTrees',
+						authors: 'Matthew Britton'
+					},
+					{
+						title: 'Tests, Memory, and Artificial Intelligence: How Can We Know What People Know?',
+						url: 'http://www.cs.williams.edu/~20nqc1/',
+						authors: 'Noah Cowit, Catherine Yeh, and Iris Howley'
+					}
+				]
+			},
+			{
+				time: '5:15 -- 5:35',
+				title: 'Moderated Panel Discussion'
+			},
+			{ time: '5:35 -- 5:40', title: 'Best submission ceremony' },
+			{ time: '8:00', title: 'VISxAI Eastcoast party' }
+		],
 		callForParticipation:
-			'To make our work more accessible to the general audience, we are soliciting submissions in a novel format: blog-style posts and jupyter-like notebooks.',
-
-		organizers: [],
+			'To make our work more accessible to the general audience, we are soliciting submissions in a novel format: blog-style posts and jupyter-like notebooks. In addition we also accept position papers in a more traditional form. Explainable submissions (e.g., interactive articles, markup, and notebooks) are the core element of the workshop, as this workshop aims to be a platform for explanatory visualizations focusing on AI techniques. Authors have the freedom to use whatever templates and formats they like. However, the narrative has to be visual and interactive, and walk readers through a keen understanding on the ML technique or application.',
+		organizers: [
+			{ name: 'Adam Perer', affiliation: 'Carnegie Mellon University' },
+			{ name: 'Duen Horng (Polo) Chau', affiliation: 'Georgia Tech' },
+			{ name: 'Fernanda Viégas', affiliation: 'Google Brain' },
+			{ name: 'Fred Hohman', affiliation: 'Georgia Tech' },
+			{ name: 'Hendrik Strobelt', affiliation: 'MIT-IBM Watson AI Lab' },
+			{ name: 'Mennatallah El-Assady', affiliation: 'University of Konstanz' }
+		],
 		steeringCommittee: [],
-		pc: []
+		pc: [
+			'Adam Perer',
+			'Arjun Srinivasan',
+			'Arvind Satyanarayan',
+			'Christian Bors',
+			'Duen Horng Chau',
+			'Dustin Arendt',
+			'Dylan Cashman',
+			'Emily Wall',
+			'Fernanda Viegas',
+			'Fred Hohman',
+			'Hendrik Strobelt',
+			'Iris Howley',
+			'Jaegul Choo',
+			'Jürgen Bernard',
+			'Lana El Sanyoura',
+			'Mennatallah El-Assady',
+			'Nan Cao',
+			'Rita Borgo',
+			'Sebastian Gehrmann',
+			'Tommy Dang',
+			'Yang Wang'
+		]
 	},
 	2018: {
 		year: 2018,
@@ -1220,15 +1382,178 @@ export const years: Record<number, YearData> = {
 			'The role of visualization in artificial intelligence (AI) gained significant attention in recent years. With the growing complexity of AI models, the critical need for understanding their inner-workings has increased. Visualization is potentially a powerful technique to fill such a critical need.',
 			"The goal of this workshop is to initiate a call for 'explainables' / 'explorables' that explain how AI techniques work using visualization. We believe the VIS community can leverage their expertise in creating visual narratives to bring new insight into the often obfuscated complexity of AI systems."
 		],
-		examples: [],
-		dates: [],
-		program: [],
+		examples: [
+			{
+				title: 'Why Momentum Really Works',
+				url: 'https://distill.pub/2017/momentum/',
+				authors: 'Gabriel Goh',
+				year: 2017
+			},
+			{
+				title: 'Tensorflow Playground',
+				url: 'http://playground.tensorflow.org/',
+				authors: 'Smilkov, Carter, et.al.',
+				year: 2016
+			},
+			{
+				title: 'FormaFluens Data Experiment',
+				url: 'http://formafluens.io/client/mix10.html',
+				authors: 'Strobelt, Phibbs, Martino',
+				year: 2018
+			}
+		],
+		dates: [
+			{ date: 'July 12, 2018', event: 'Blog/Notebooks + Position Paper Submission' },
+			{ date: 'August 2, 2018', event: 'Author Notification' },
+			{ date: 'September 3, 2018', event: 'Camera-ready Copy for Accepted Submissions' },
+			{ date: 'September 7, 2018', event: 'VIS Early Bird Registration Ends' },
+			{ date: 'October 22, 2018', event: 'Workshop in Berlin at IEEE VIS 2018' }
+		],
+		program: [
+			{ time: '2:20 -- 2:25', title: 'Welcome from the Organizers' },
+			{
+				time: '2:25 -- 3:10',
+				title: 'Keynote: Been Kim (Google Brain)',
+				content:
+					'Towards Interpretability for Everyone: Testing with Concept Activation Vectors (TCAV) - The ultimate goal of interpretability is to help users gain insights into the model for more responsible use of ML. Unlike the majority of subfields in ML, interpretable ML requires studying how humans parse complex information and exploring effective ways to communicate such information. This human aspect becomes even more critical when developing interpretability methods for non-ML experts/layer users --- my core research agenda.'
+			},
+			{
+				time: '3:10 -- 3:35',
+				title: 'Session I: Neural Networks and Deep Learning',
+				items: [
+					{
+						title: 'Visualising State Space Representations of Long Short-Term Memory Networks',
+						url: 'http://eprints.uwe.ac.uk/37807/1/visualising_networks.html',
+						authors: 'Emmanuel M. Smith, Jim Smith, Phil Legg and Simon Francis'
+					},
+					{
+						title: 'Visualizing neuron activations of neural networks with the grand tour',
+						url: 'http://hdc.cs.arizona.edu/~mwli/grandtour/index.html',
+						authors: 'Mingwei Li, Zhenge Zhao and Carlos Scheidegger'
+					},
+					{
+						title: 'Embodied Machine Learning: An educational, human MNIST classifier',
+						url: 'https://github.com/philippschmitt/embodied-ml',
+						authors: 'Philipp Schmitt'
+					}
+				]
+			},
+			{
+				time: '3:35 -- 4:00',
+				title: 'Session II: Projections and Dimensionality Reduction',
+				items: [
+					{
+						title: 'Roads from Above',
+						url: 'https://roadsfromabove.netlify.com/',
+						authors: 'Greg More, Slaven Marusic and Caihao Cui'
+					},
+					{
+						title: "The Beginner's Guide to Dimensionality Reduction",
+						url: 'https://idyll.pub/post/visxai-dimensionality-reduction-1dbad0a67a092b007c526a45/',
+						authors: 'Matthew Conlen and Fred Hohman'
+					},
+					{
+						title:
+							'Dimension, Distances, or Neighborhoods? Projection Literacy for the Analysis of Multivariate Data',
+						url: 'https://visxprojections.dbvis.de/',
+						authors: 'Dirk Streeb, Rebecca Kehlbeck, Dominik Jäckle and Mennatallah El-Assady'
+					}
+				]
+			},
+			{ time: '4:00 -- 4:20', title: 'Coffee Break with Poster Session' },
+			{
+				time: '4:20 -- 4:45',
+				title: 'Session III: Data Distribution and Bias',
+				items: [
+					{
+						title: 'A Visual Exploration of Gaussian Processes',
+						url: 'https://www.jgoertler.com/visual-exploration-gaussian-processes/',
+						authors: 'Jochen Görtler, Rebecca Kehlbeck and Oliver Deussen'
+					},
+					{
+						title: 'Towards an Interpretable Latent Space',
+						url: 'https://spinthil.github.io/towards-an-interpretable-latent-space/',
+						authors: 'Thilo Spinner, Jonas Körner, Jochen Görtler and Oliver Deussen'
+					},
+					{
+						title: 'Understanding Bias in Machine Learning',
+						url: 'https://mybinder.org/v2/gh/Jindong-Explainable-AI/Bias_in_Machine_Learning/master?filepath=ML_Bias.ipynb',
+						authors: 'Jindong Gu and Daniela Oelke'
+					}
+				]
+			},
+			{
+				time: '4:45 -- 5:10',
+				title: 'Session IV: Machine Learning Processes and Explanation Strategies',
+				items: [
+					{
+						title:
+							'Minions, Sheep, and Fruits: Metaphorical Narratives to Explain Artificial Intelligence and Build Trust',
+						url: 'https://bib.dbvis.de/publications/details/787',
+						authors:
+							'Wolfgang Jentner, Rita Sevastjanova, Florian Stoffel, Daniel Keim, Jurgen Bernard and Mennatallah El-Assady'
+					},
+					{
+						title: 'Aimacode Javascript - Minimax',
+						url: 'http://aimacode.github.io/aima-javascript/5-Adversarial-Search/',
+						authors: 'Michael Kawano'
+					},
+					{
+						title:
+							'Going beyond Visualization: Verbalization as Complementary Medium to Explain Machine Learning Models',
+						url: 'http://verbalization.lingvis.io/',
+						authors:
+							'Rita Sevastjanova, Fabian Beck, Basil Ell, Cagatay Turkay, Rafael Henkin, Miriam Butt, Daniel Keim and Mennatallah El-Assady'
+					}
+				]
+			},
+			{
+				time: '5:10 -- 5:55',
+				title: 'Moderated Panel Discussion'
+			},
+			{ time: '5:55 -- 6:00', title: 'Best submission ceremony and "Auf Wiedersehen" :)' },
+			{ time: '8:00', title: 'VISxAI Eastcoast party' }
+		],
 		callForParticipation:
-			'To make our work more accessible to the general audience, we are soliciting submissions in a novel format: blog-style posts and jupyter-like notebooks.',
-
-		organizers: [],
+			'To make our work more accessible to the general audience, we are soliciting submissions in a novel format: blog-style posts and jupyter-like notebooks. In addition we also accept position papers in a more traditional form.',
+		organizers: [
+			{ name: 'Mennatallah El-Assady', affiliation: 'University of Konstanz' },
+			{ name: 'Duen Horng (Polo) Chau', affiliation: 'Georgia Tech' },
+			{ name: 'Adam Perer', affiliation: 'Carnegie Mellon University' },
+			{ name: 'Hendrik Strobelt', affiliation: 'IBM Research, MIT-IBM Watson AI Lab' },
+			{ name: 'Fernanda Viégas', affiliation: 'Google Brain' }
+		],
 		steeringCommittee: [],
-		pc: []
+		pc: [
+			'Adam Perer',
+			'Alexander Rush',
+			'Arvind Satyanarayan',
+			'Brady Redfearn',
+			'Carlos Scheidegger',
+			'Jaegul Choo',
+			'Christian Bors',
+			'Christopher Collins',
+			'David Bau',
+			'Duen Horng (Polo) Chau',
+			'Dustin Arendt',
+			'Dylan Cashman',
+			'Lana El Sanyoura',
+			'Fernanda Viégas',
+			'Fred Hohman',
+			'Hendrik Strobelt',
+			'Iris Howley',
+			'Juergen Bernard',
+			'Kanit Wongsuphasawat',
+			'Martin Wattenberg',
+			'Matthew Conlen',
+			'Mennatallah El-Assady',
+			'Minsuk Kahng',
+			'Rita Borgo',
+			'Sebastian Gehrmann',
+			'Tommy Dang',
+			'Yamini Bansal',
+			'Yang Wang'
+		]
 	}
 };
 
