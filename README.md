@@ -1,38 +1,101 @@
-# sv
+# VISxAI Website
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is the official website for [visxai.io](https://visxai.io), the VISxAI workshop series on visualization and AI.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+This project is built with:
+- **SvelteKit** - Web framework
+- **Tailwind CSS** - Styling
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **@sveltejs/adapter-static** - Static site generation for GitHub Pages
+
+## Getting Started
+
+### Prerequisites
+
+- [Bun](https://bun.sh) (v1.0 or higher recommended)
+
+### Installation
+
+Clone the repository and install dependencies:
 
 ```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+git clone https://github.com/visxai/visxai.github.io.git
+cd visxai.github.io
+bun install
 ```
 
-## Developing
+## Development
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start the development server:
 
 ```sh
-npm run dev
+bun run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run dev --open
 ```
+
+The site will be available at `http://localhost:5173` (or another port if 5173 is in use).
 
 ## Building
 
-To create a production version of your app:
+To create a production build:
 
 ```sh
-npm run build
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+This will generate a static site in the `build/` directory using the static adapter configured in `svelte.config.js`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+You can preview the production build locally:
+
+```sh
+bun run preview
+```
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the main branch.
+
+### Manual Deployment
+
+If you need to deploy manually:
+
+1. Build the project:
+   ```sh
+   bun run build
+   ```
+
+2. The `build/` directory contains the static files ready for deployment
+
+### GitHub Pages Configuration
+
+The project uses:
+- **Adapter**: `@sveltejs/adapter-static` for static site generation
+- **Build output**: `build/` directory
+- **Deployment**: Automated via GitHub Actions workflow
+
+## Project Structure
+
+```
+├── src/
+│   ├── lib/
+│   │   └── data/
+│   │       └── years.ts      # Workshop data by year
+│   ├── routes/               # SvelteKit routes
+│   └── app.html             # HTML template
+├── static/                   # Static assets
+├── build/                    # Production build output (generated)
+└── svelte.config.js         # SvelteKit configuration
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
+
+## License
+
+See the repository for license information.
