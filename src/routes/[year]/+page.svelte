@@ -5,13 +5,16 @@
 	import { error } from '@sveltejs/kit';
 
 	// Reactive statement to get the year from the URL
-	$: year = parseInt($page.params.year);
-	$: data = getYearData(year);
+	// Reactive statement to get the year from the URL
+	let year = $derived(parseInt($page.params.year!));
+	let data = $derived(getYearData(year));
 
 	// If data is not found, we should probably handle 404, but for now let's just let it fail or show error
-	$: if (!data) {
-		throw error(404, 'Year not found');
-	}
+	$effect(() => {
+		if (!data) {
+			throw error(404, 'Year not found');
+		}
+	});
 </script>
 
 {#if data}

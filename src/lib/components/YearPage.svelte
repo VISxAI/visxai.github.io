@@ -2,13 +2,15 @@
 	import { base } from '$app/paths';
 	import { type YearData, bestPapers, years } from '$lib/data/years';
 
-	export let data: YearData;
+	let { data }: { data: YearData } = $props();
 
-	$: visibleBestPapers = Object.entries(bestPapers)
-		.map(([year, items]) => ({ year: parseInt(year), items }))
-		.filter((entry) => entry.year <= data.year)
-		.sort((a, b) => b.year - a.year);
-	$: currentYear = Math.max(...Object.keys(years).map(Number));
+	let visibleBestPapers = $derived(
+		Object.entries(bestPapers)
+			.map(([year, items]) => ({ year: parseInt(year), items }))
+			.filter((entry) => entry.year <= data.year)
+			.sort((a, b) => b.year - a.year)
+	);
+	let currentYear = Math.max(...Object.keys(years).map(Number));
 
 	function getEditionNumber(year: number): string {
 		const edition = year - 2018 + 1; // 2018 was the 1st workshop

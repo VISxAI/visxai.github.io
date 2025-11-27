@@ -2,9 +2,9 @@
 	import { page } from '$app/stores';
 	import { latestYear, years } from '$lib/data/years';
 
-	let isMenuOpen = false;
-	let isYearDropdownOpen = false;
-	let isMobileYearDropdownOpen = false;
+	let isMenuOpen = $state(false);
+	let isYearDropdownOpen = $state(false);
+	let isMobileYearDropdownOpen = $state(false);
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
@@ -31,11 +31,11 @@
 
 	// Determine if we are on a page that has the sections (home or year page)
 	// If not, we prepend '/' to the anchor links to go to the home page
-	$: isContentPage = $page.url.pathname === '/' || /^\/\d{4}$/.test($page.url.pathname);
-	$: linkPrefix = isContentPage ? '' : '/';
+	let isContentPage = $derived($page.url.pathname === '/' || /^\/\d{4}$/.test($page.url.pathname));
+	let linkPrefix = $derived(isContentPage ? '' : '/');
 </script>
 
-<svelte:window on:click={handleOutsideClick} />
+<svelte:window onclick={handleOutsideClick} />
 
 <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,7 +89,7 @@
 							id="year-menu-button"
 							aria-expanded={isYearDropdownOpen}
 							aria-haspopup="true"
-							on:click={toggleYearDropdown}
+							onclick={toggleYearDropdown}
 						>
 							Past Years
 							<svg
@@ -123,7 +123,7 @@
 										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
 										role="menuitem"
 										tabindex="-1"
-										on:click={() => (isYearDropdownOpen = false)}
+										onclick={() => (isYearDropdownOpen = false)}
 									>
 										{year}
 									</a>
@@ -141,7 +141,7 @@
 					class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
-					on:click={toggleMenu}
+					onclick={toggleMenu}
 				>
 					<span class="sr-only">Open main menu</span>
 					<!-- Icon when menu is closed -->
@@ -222,7 +222,7 @@
 			<button
 				type="button"
 				class="text-gray-700 hover:text-gray-900 w-full text-left px-3 py-2 rounded-md text-base font-medium flex justify-between items-center"
-				on:click={toggleMobileYearDropdown}
+				onclick={toggleMobileYearDropdown}
 			>
 				Past Years
 				<svg
