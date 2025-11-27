@@ -39,7 +39,6 @@ export interface Person {
 
 export interface YearData {
 	year: number;
-	title: string;
 	location: string;
 	date: string;
 	intro: string[];
@@ -161,7 +160,6 @@ export const bestPapers: Record<number, { title: string; url: string; authors: s
 export const years: Record<number, YearData> = {
 	2025: {
 		year: 2025,
-		title: '8th Workshop on Visualization for AI Explainability',
 		location: 'Vienna, Austria',
 		date: 'November 2, 2025',
 		intro: [
@@ -342,7 +340,6 @@ export const years: Record<number, YearData> = {
 	},
 	2024: {
 		year: 2024,
-		title: '7th Workshop on Visualization for AI Explainability',
 		location: 'St. Pete Beach, Florida',
 		date: 'October 13, 2024',
 		intro: [
@@ -546,7 +543,6 @@ export const years: Record<number, YearData> = {
 	},
 	2023: {
 		year: 2023,
-		title: '6th Workshop on Visualization for AI Explainability',
 		location: 'Online (+ meetup at IEEE VIS 2023 in Melbourne, Australia)',
 		date: 'October 18th, 2023 at 8:00am PT / 3:00pm UTC',
 		intro: [
@@ -720,7 +716,6 @@ export const years: Record<number, YearData> = {
 	},
 	2022: {
 		year: 2022,
-		title: '5th Workshop on Visualization for AI Explainability',
 		location: 'Oklahoma City, Oklahoma',
 		date: 'October 17th, 2022',
 		intro: [
@@ -877,7 +872,6 @@ export const years: Record<number, YearData> = {
 	},
 	2021: {
 		year: 2021,
-		title: '4th Workshop on Visualization for AI Explainability',
 		location: 'Virtual (originally New Orleans, Louisiana)',
 		date: 'October 25th, 2021',
 		intro: [
@@ -1040,7 +1034,6 @@ export const years: Record<number, YearData> = {
 	},
 	2020: {
 		year: 2020,
-		title: '3rd Workshop on Visualization for AI Explainability',
 		location: 'Virtual (originally Salt Lake City, Utah)',
 		date: 'October 26, 2020',
 		intro: [
@@ -1194,7 +1187,6 @@ export const years: Record<number, YearData> = {
 	},
 	2019: {
 		year: 2019,
-		title: '2nd Workshop on Visualization for AI Explainability',
 		location: 'Vancouver, Canada',
 		date: 'October 21, 2019',
 		intro: [
@@ -1375,7 +1367,6 @@ export const years: Record<number, YearData> = {
 	},
 	2018: {
 		year: 2018,
-		title: '1st Workshop on Visualization for AI Explainability',
 		location: 'Berlin, Germany',
 		date: 'October 22, 2018',
 		intro: [

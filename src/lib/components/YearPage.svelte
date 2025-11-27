@@ -9,6 +9,14 @@
 		.filter((entry) => entry.year <= data.year)
 		.sort((a, b) => b.year - a.year);
 	$: currentYear = Math.max(...Object.keys(years).map(Number));
+
+	function getEditionNumber(year: number): string {
+		const edition = year - 2018 + 1; // 2018 was the 1st workshop
+		const suffixes = ['th', 'st', 'nd', 'rd'];
+		const v = edition % 100;
+		return edition + (suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0]);
+	}
+
 	function isPast(dateStr: string): boolean {
 		const now = new Date();
 		let clean = dateStr
@@ -33,12 +41,15 @@
 </script>
 
 <svelte:head>
-	<title>{data.title}</title>
+	<title>{getEditionNumber(data.year)} Workshop on Visualization for AI Explainability</title>
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@visxai" />
 	<meta name="twitter:creator" content="@visxai" />
 	<meta property="og:url" content="http://visxai.io" />
-	<meta property="og:title" content={data.title} />
+	<meta
+		property="og:title"
+		content={`${getEditionNumber(data.year)} Workshop on Visualization for AI Explainability`}
+	/>
 	<meta property="og:description" content={data.intro[0]} />
 	<meta property="og:image" content="http://visxai.github.io/img/share.png" />
 </svelte:head>
@@ -48,7 +59,7 @@
 	<div class="flex flex-col md:flex-row justify-between items-start mb-8">
 		<div>
 			<h1 class="text-4xl font-bold mb-2">
-				{data.year === 2025 ? '8th' : '7th'} Workshop on <br />
+				{getEditionNumber(data.year)} Workshop on <br />
 				<span class="text-black">Visualization for AI Explainability</span>
 			</h1>
 			<p class="text-xl text-gray-600">
