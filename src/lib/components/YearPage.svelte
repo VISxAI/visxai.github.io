@@ -91,16 +91,19 @@
 			Example interactive visualization articles:
 			<ul class="list-none pl-0 mt-2 space-y-1">
 				{#each data.examples as example, i}
-					<li>
-						({String.fromCharCode(97 + i)})
-						<a href={example.url} target="_blank" class="font-bold text-blue-600 hover:underline"
-							>{example.title}</a
-						>
-						by {example.authors} (<a
-							href="https://visxai.io/{example.year}"
-							class="text-blue-600 hover:underline">VISxAI {example.year}</a
-						>)
-					</li>
+			<li>
+			({String.fromCharCode(97 + i)})
+			<a href={example.url} target="_blank" class="font-bold text-blue-600 hover:underline"
+				>{example.title}</a
+			>
+			by {example.authors}
+			{#if example.year}
+				(<a
+					href="https://visxai.io/{example.year}"
+					class="text-blue-600 hover:underline">VISxAI {example.year}</a
+				>)
+			{/if}
+			</li>
 				{/each}
 			</ul>
 		</div>

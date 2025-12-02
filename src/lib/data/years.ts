@@ -2,7 +2,7 @@ export interface Example {
 	title: string;
 	url: string;
 	authors: string;
-	year: number;
+	year?: number;
 	image?: string;
 	id?: string; // for internal linking if needed
 }
@@ -207,7 +207,6 @@ export const years: Record<number, YearData> = {
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
 				authors: 'Strobelt, Phibbs, and Martino',
-				year: 2018
 			},
 			{
 				title: "The Beginner's Guide to Dimensionality Reduction",
@@ -387,7 +386,6 @@ export const years: Record<number, YearData> = {
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
 				authors: 'Strobelt, Phibbs, and Martino',
-				year: 2018
 			},
 			{
 				title: "The Beginner's Guide to Dimensionality Reduction",
@@ -584,13 +582,11 @@ export const years: Record<number, YearData> = {
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
 				authors: 'Feng and Wu',
-				year: 2019
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
 				authors: 'Strobelt, Phibbs, and Martino',
-				year: 2018
 			},
 			{
 				title: "The Beginner's Guide to Dimensionality Reduction",
@@ -751,13 +747,11 @@ export const years: Record<number, YearData> = {
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
 				authors: 'Feng and Wu',
-				year: 2019
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
 				authors: 'Strobelt, Phibbs, and Martino',
-				year: 2018
 			}
 		],
 		dates: [
@@ -907,13 +901,11 @@ export const years: Record<number, YearData> = {
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
 				authors: 'Feng and Wu',
-				year: 2019
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
 				authors: 'Strobelt, Phibbs, and Martino',
-				year: 2018
 			}
 		],
 		dates: [
@@ -1063,19 +1055,16 @@ export const years: Record<number, YearData> = {
 				title: 'Communicating Model Uncertainty Over Space',
 				url: 'https://pair-code.github.io/interpretability/uncertainty-over-space/',
 				authors: 'Pearce',
-				year: 2020
 			},
 			{
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
 				authors: 'Feng and Wu',
-				year: 2019
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
 				authors: 'Strobelt, Phibbs, and Martino',
-				year: 2018
 			}
 		],
 		dates: [
@@ -1210,25 +1199,21 @@ export const years: Record<number, YearData> = {
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
 				authors: 'Strobelt, Phibbs, and Martino',
-				year: 2018
 			},
 			{
 				title: 'Attacking Discrimination with Smarter Machine Learning',
 				url: 'https://research.google.com/bigpicture/attacking-discrimination-in-ml/',
 				authors: 'Wattenberg, Viégas, and Hardt',
-				year: 2016
 			},
 			{
 				title: 'Tensorflow Playground',
 				url: 'http://playground.tensorflow.org/',
 				authors: 'Smilkov, Carter, et.al.',
-				year: 2016
 			},
 			{
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
 				authors: 'Feng and Wu',
-				year: 2019
 			}
 		],
 		dates: [
@@ -1378,19 +1363,16 @@ export const years: Record<number, YearData> = {
 				title: 'Why Momentum Really Works',
 				url: 'https://distill.pub/2017/momentum/',
 				authors: 'Gabriel Goh',
-				year: 2017
 			},
 			{
 				title: 'Tensorflow Playground',
 				url: 'http://playground.tensorflow.org/',
 				authors: 'Smilkov, Carter, et.al.',
-				year: 2016
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
 				authors: 'Strobelt, Phibbs, Martino',
-				year: 2018
 			}
 		],
 		dates: [
