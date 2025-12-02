@@ -59,18 +59,18 @@
 <div class="container mx-auto px-4 py-8 max-w-4xl">
 	<!-- Header -->
 	<div class="flex flex-col md:flex-row justify-between items-start mb-8">
-		<div>
-			<h1 class="text-4xl font-bold mb-2">
-				{getEditionNumber(data.year)} Workshop on <br />
-				<span class="text-black">Visualization for AI Explainability</span>
-			</h1>
-			<p class="text-xl text-gray-600">
-				{data.date} at IEEE VIS in {data.location}
-			</p>
-		</div>
-		<div class="mt-4 md:mt-0">
-			<img src="{base}/img/logo_v2.png" alt="VISxAI Logo" class="h-20" />
-		</div>
+	<div class="order-2 md:order-1">
+		<h1 class="text-4xl font-bold mb-2">
+		{getEditionNumber(data.year)} Workshop on <br />
+		<span class="text-black">Visualization for AI Explainability</span>
+		</h1>
+		<p class="text-xl text-gray-600">
+		{data.date} at IEEE VIS in {data.location}
+		</p>
+	</div>
+	<div class="mb-4 md:mt-0 order-1 md:order-2">
+		<img src="{base}/img/logo_v2.png" alt="VISxAI Logo" class="h-20" />
+	</div>
 	</div>
 
 	<!-- Intro -->
