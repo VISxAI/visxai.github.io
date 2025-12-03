@@ -32,10 +32,7 @@ bun install
 Start the development server:
 
 ```sh
-bun run dev
-
-# or start the server and open the app in a new browser tab
-bun run dev --open
+bun dev
 ```
 
 The site will be available at `http://localhost:5173` (or another port if 5173 is in use).
@@ -45,7 +42,7 @@ The site will be available at `http://localhost:5173` (or another port if 5173 i
 To create a production build:
 
 ```sh
-bun run build
+bun build
 ```
 
 This will generate a static site in the `build/` directory using the static adapter configured in `svelte.config.js`.
@@ -53,25 +50,12 @@ This will generate a static site in the `build/` directory using the static adap
 You can preview the production build locally:
 
 ```sh
-bun run preview
+bun preview
 ```
 
 ## Deployment
 
 The site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the main branch.
-
-### Manual Deployment
-
-If you need to deploy manually:
-
-1. Build the project:
-   ```sh
-   bun run build
-   ```
-
-2. The `build/` directory contains the static files ready for deployment
-
-### GitHub Pages Configuration
 
 The project uses:
 - **Adapter**: `@sveltejs/adapter-static` for static site generation
@@ -91,11 +75,3 @@ The project uses:
 ├── build/                    # Production build output (generated)
 └── svelte.config.js         # SvelteKit configuration
 ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests.
-
-## License
-
-See the repository for license information.
