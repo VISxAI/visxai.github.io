@@ -53,6 +53,14 @@ export interface YearData {
 }
 
 export const bestPapers: Record<number, { title: string; url: string; authors: string }[]> = {
+	2025: [
+		{
+			title: 'Transformer Explainer: LLM Transformer Model Visually Explained',
+			url: 'https://poloclub.github.io/transformer-explainer/',
+			authors:
+				'Aeree Cho, Grace C. Kim, Alexander Karpekov, Alec Helbling, Zijie J. Wang, Seongmin Lee, Benjamin Hoover, Duen Horng Chau'
+		}
+	],
 	2024: [
 		{
 			title: 'Can Large Language Models Explain Their Internal Mechanisms?',
@@ -206,7 +214,7 @@ export const years: Record<number, YearData> = {
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
-				authors: 'Strobelt, Phibbs, and Martino',
+				authors: 'Strobelt, Phibbs, and Martino'
 			},
 			{
 				title: "The Beginner's Guide to Dimensionality Reduction",
@@ -240,7 +248,7 @@ export const years: Record<number, YearData> = {
 						title: 'Transformer Explainer: LLM Transformer Model Visually Explained',
 						url: 'https://poloclub.github.io/transformer-explainer/',
 						authors:
-							'Cho, Aeree, Kim, Grace C., Karpekov, Alexander, Helbling, Alec, Wang, Zijie J., Lee, Seongmin, Hoover, Benjamin, Chau, Duen Horng'
+							'Aeree Cho, Grace C. Kim, Alexander Karpekov, Alec Helbling, Zijie J. Wang, Seongmin Lee, Benjamin Hoover, Duen Horng Chau'
 					},
 					{
 						title: 'The Mystery of In-Context Learning: How Transformers Learn Patterns',
@@ -385,7 +393,7 @@ export const years: Record<number, YearData> = {
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
-				authors: 'Strobelt, Phibbs, and Martino',
+				authors: 'Strobelt, Phibbs, and Martino'
 			},
 			{
 				title: "The Beginner's Guide to Dimensionality Reduction",
@@ -581,12 +589,12 @@ export const years: Record<number, YearData> = {
 			{
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
-				authors: 'Feng and Wu',
+				authors: 'Feng and Wu'
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
-				authors: 'Strobelt, Phibbs, and Martino',
+				authors: 'Strobelt, Phibbs, and Martino'
 			},
 			{
 				title: "The Beginner's Guide to Dimensionality Reduction",
@@ -746,12 +754,12 @@ export const years: Record<number, YearData> = {
 			{
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
-				authors: 'Feng and Wu',
+				authors: 'Feng and Wu'
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
-				authors: 'Strobelt, Phibbs, and Martino',
+				authors: 'Strobelt, Phibbs, and Martino'
 			}
 		],
 		dates: [
@@ -900,12 +908,12 @@ export const years: Record<number, YearData> = {
 			{
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
-				authors: 'Feng and Wu',
+				authors: 'Feng and Wu'
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
-				authors: 'Strobelt, Phibbs, and Martino',
+				authors: 'Strobelt, Phibbs, and Martino'
 			}
 		],
 		dates: [
@@ -1054,17 +1062,17 @@ export const years: Record<number, YearData> = {
 			{
 				title: 'Communicating Model Uncertainty Over Space',
 				url: 'https://pair-code.github.io/interpretability/uncertainty-over-space/',
-				authors: 'Pearce',
+				authors: 'Pearce'
 			},
 			{
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
-				authors: 'Feng and Wu',
+				authors: 'Feng and Wu'
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
-				authors: 'Strobelt, Phibbs, and Martino',
+				authors: 'Strobelt, Phibbs, and Martino'
 			}
 		],
 		dates: [
@@ -1198,22 +1206,22 @@ export const years: Record<number, YearData> = {
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
-				authors: 'Strobelt, Phibbs, and Martino',
+				authors: 'Strobelt, Phibbs, and Martino'
 			},
 			{
 				title: 'Attacking Discrimination with Smarter Machine Learning',
 				url: 'https://research.google.com/bigpicture/attacking-discrimination-in-ml/',
-				authors: 'Wattenberg, Viégas, and Hardt',
+				authors: 'Wattenberg, Viégas, and Hardt'
 			},
 			{
 				title: 'Tensorflow Playground',
 				url: 'http://playground.tensorflow.org/',
-				authors: 'Smilkov, Carter, et.al.',
+				authors: 'Smilkov, Carter, et.al.'
 			},
 			{
 				title: 'The Myth of the Impartial Machine',
 				url: 'https://parametric.press/issue-01/the-myth-of-the-impartial-machine/',
-				authors: 'Feng and Wu',
+				authors: 'Feng and Wu'
 			}
 		],
 		dates: [
@@ -1362,17 +1370,17 @@ export const years: Record<number, YearData> = {
 			{
 				title: 'Why Momentum Really Works',
 				url: 'https://distill.pub/2017/momentum/',
-				authors: 'Gabriel Goh',
+				authors: 'Gabriel Goh'
 			},
 			{
 				title: 'Tensorflow Playground',
 				url: 'http://playground.tensorflow.org/',
-				authors: 'Smilkov, Carter, et.al.',
+				authors: 'Smilkov, Carter, et.al.'
 			},
 			{
 				title: 'FormaFluens Data Experiment',
 				url: 'http://formafluens.io/client/mix10.html',
-				authors: 'Strobelt, Phibbs, Martino',
+				authors: 'Strobelt, Phibbs, Martino'
 			}
 		],
 		dates: [
