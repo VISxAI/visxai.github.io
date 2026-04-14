@@ -166,6 +166,81 @@ export const bestPapers: Record<number, { title: string; url: string; authors: s
 };
 
 export const years: Record<number, YearData> = {
+	2026: {
+		year: 2026,
+		location: 'Boston, MA',
+		date: 'October 2026',
+		intro: [
+			'The role of visualization in artificial intelligence (AI) gained significant attention in recent years. With the growing complexity of AI models, the critical need for understanding their inner-workings has increased. Visualization is potentially a powerful technique to fill such a critical need.',
+			"The goal of this workshop is to initiate a call for 'explainables' / 'explorables' that explain how AI techniques work using visualization. We believe the VIS community can leverage their expertise in creating visual narratives to bring new insight into the often obfuscated complexity of AI systems."
+		],
+		examples: [
+			{
+				title: 'A Visual Exploration of Gaussian Processes',
+				url: 'https://distill.pub/2019/visual-exploration-gaussian-processes/',
+				authors: 'Görtler, Kehlbeck, and Deussen',
+				year: 2018
+			},
+			{
+				title: 'What Have Language Models Learned?',
+				url: 'https://pair.withgoogle.com/explorables/fill-in-the-blank/',
+				authors: 'Adam Pearce',
+				year: 2021
+			},
+			{
+				title: 'Transformer Explainer: LLM Transformer Model Visually Explained',
+				url: 'https://poloclub.github.io/transformer-explainer/',
+				authors: 'Cho, Kim, Karpekov, Helbling, Wang, Lee, Hoover, Chau',
+				year: 2025
+			},
+			{
+				title: 'K-Means Clustering: An Explorable Explainer',
+				url: 'https://k-means-explorable.vercel.app/',
+				authors: 'Yi Zhe Ang',
+				year: 2022
+			},
+			{
+				title: 'Can Large Language Models Explain Their Internal Mechanisms?',
+				url: 'https://pair.withgoogle.com/explorables/patchscopes/',
+				authors: 'Hussein, Ghandeharioun, Mullins, Reif, Wilson, Thain, Dixon',
+				year: 2024
+			},
+			{
+				title: 'FormaFluens Data Experiment',
+				url: 'http://formafluens.io/client/mix10.html',
+				authors: 'Strobelt, Phibbs, and Martino'
+			},
+			{
+				title: "The Beginner's Guide to Dimensionality Reduction",
+				url: 'https://idyll.pub/post/visxai-dimensionality-reduction-1dbad0a67a092b007c526a45/',
+				authors: 'Conlen and Hohman',
+				year: 2018
+			}
+		],
+		dates: [
+			{ date: 'May 5, 2026', event: 'Call for Participation' },
+			{ date: 'August 3, 2026, anywhere', event: 'Submission Deadline' },
+			{ date: 'September 8, 2026', event: 'Reviews Submitted' },
+			{ date: 'September 14, 2026', event: 'Author Notification' },
+			{ date: 'October 16, 2026', event: 'Camera Ready Deadline' }
+		],
+		program: [],
+		callForParticipation:
+			'To make our work more accessible to the general audience, we are soliciting submissions in a novel format: blog-style posts and jupyter-like notebooks. In addition we also accept position papers in a more traditional form.',
+
+		organizers: [
+			{ name: 'Alex Bäuerle', affiliation: 'Google DeepMind' },
+			{ name: 'Angie Boggust', affiliation: 'Massachusetts Institute of Technology' },
+			{ name: 'Catherine Yeh', affiliation: 'Harvard University' },
+			{ name: 'Fred Hohman', affiliation: 'Apple' }
+		],
+		steeringCommittee: [
+			{ name: 'Adam Perer', affiliation: 'Carnegie Mellon University' },
+			{ name: 'Hendrik Strobelt', affiliation: 'MIT-IBM Watson AI Lab' },
+			{ name: 'Mennatallah El-Assady', affiliation: 'ETH AI Center' }
+		],
+		pc: []
+	},
 	2025: {
 		year: 2025,
 		location: 'Vienna, Austria',
@@ -1542,4 +1617,4 @@ export const getYearData = (year: number): YearData | undefined => {
 	return years[year];
 };
 
-export const latestYear = 2025;
+export const latestYear = 2026;
