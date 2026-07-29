@@ -11,6 +11,7 @@ export interface ImportantDate {
 	date: string;
 	event: string;
 	strikethrough?: boolean;
+	previousDate?: string;
 }
 
 export interface SessionItem {
@@ -219,10 +220,10 @@ export const years: Record<number, YearData> = {
 		],
 		dates: [
 			{ date: 'May 5, 2026', event: 'Call for Participation' },
-			{ date: 'August 3, 2026, anywhere', event: 'Submission Deadline' },
-			{ date: 'September 8, 2026', event: 'Reviews Submitted' },
-			{ date: 'September 14, 2026', event: 'Author Notification' },
-			{ date: 'October 16, 2026', event: 'Camera Ready Deadline' }
+			{ date: 'August 10, 2026, anywhere', event: 'Submission Deadline', previousDate: 'August 3, 2026' },
+			{ date: 'September 15, 2026', event: 'Reviews Submitted', previousDate: 'September 8, 2026' },
+			{ date: 'September 21, 2026', event: 'Author Notification', previousDate: 'September 14, 2026' },
+			{ date: 'October 23, 2026', event: 'Camera Ready Deadline', previousDate: 'October 16, 2026' }
 		],
 		program: [],
 		callForParticipation:

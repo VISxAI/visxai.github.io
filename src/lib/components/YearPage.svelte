@@ -114,15 +114,18 @@
 		<h2 class="text-2xl font-bold mb-4 border-b pb-2">Important Dates</h2>
 		<div class="bg-gray-50 p-6 rounded-lg font-mono text-sm md:text-base">
 			{#each data.dates as date}
-				<div class="mb-2">
-					{#if isPast(date.date) || date.strikethrough}
-						<span class="line-through text-gray-400">{date.date}</span>:
-						<span class="text-gray-400">{date.event}</span>
-					{:else}
-						<span class="font-bold">{date.date}</span>: {date.event}
+			<div class="mb-2">
+				{#if isPast(date.date) || date.strikethrough}
+					<span class="line-through text-gray-400">{date.date}</span>:
+					<span class="text-gray-400">{date.event}</span>
+				{:else}
+					{#if date.previousDate}
+						<span class="line-through text-gray-500">{date.previousDate}</span>{' '}
 					{/if}
-				</div>
-			{/each}
+					<span class="font-bold">{date.date}</span>: {date.event}
+				{/if}
+			</div>
+		{/each}
 		</div>
 	</section>
 
