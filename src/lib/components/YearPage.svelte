@@ -10,6 +10,9 @@
 			.filter((entry) => entry.year <= data.year)
 			.sort((a, b) => b.year - a.year)
 	);
+	let visibleKeynotes = $derived(
+		data.keynotes ?? (data.keynote ? [data.keynote] : [])
+	);
 	let currentYear = Math.max(...Object.keys(years).map(Number));
 
 	function getEditionNumber(year: number): string {
@@ -129,50 +132,123 @@
 		</div>
 	</section>
 
+	<!-- Keynote -->
+	{#if visibleKeynotes.length > 0}
+		<section id="keynote" class="mb-12">
+			<h2 class="text-2xl font-bold mb-4 border-b pb-2">
+				{visibleKeynotes.length > 1 ? 'Keynote Speakers' : 'Keynote Speaker'}
+			</h2>
+			<div class="space-y-6">
+				{#each visibleKeynotes as keynote (keynote.name)}
+					<div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+						<div class="flex flex-col md:flex-row gap-6 items-start">
+							{#if keynote.image}
+								<img
+									src={keynote.image}
+									alt={keynote.name}
+									class="w-32 h-32 rounded-full object-cover shadow-sm mx-auto md:mx-0 flex-shrink-0"
+								/>
+							{/if}
+							<div class="flex-1 w-full">
+								<div class="flex flex-wrap items-baseline gap-x-2">
+									<h3 class="text-xl font-bold text-gray-900">
+										{#if keynote.url}
+											<a
+												href={keynote.url}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="hover:text-blue-600 hover:underline"
+											>
+												{keynote.name}
+											</a>
+										{:else}
+											{keynote.name}
+										{/if}
+									</h3>
+									{#if keynote.affiliation}
+										<span class="text-gray-600 text-base">({keynote.affiliation})</span>
+									{/if}
+								</div>
+
+								{#if keynote.title}
+									<div class="mt-4 pt-4 border-t border-gray-200">
+										<span class="text-xs uppercase tracking-wider font-bold text-gray-500 block mb-1">
+											Keynote Talk
+										</span>
+										<h4 class="text-lg font-semibold text-gray-900">
+											{keynote.title}
+										</h4>
+										{#if keynote.abstract}
+											<p class="mt-2 text-gray-700 leading-relaxed text-sm md:text-base">
+												{keynote.abstract}
+											</p>
+										{/if}
+									</div>
+								{/if}
+
+								{#if keynote.bio}
+									<p class="mt-3 text-sm text-gray-600 leading-relaxed">
+										{keynote.bio}
+									</p>
+								{/if}
+							</div>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</section>
+	{/if}
+
 	<!-- Program -->
 	<section id="program" class="mb-12">
 		<h2 class="text-2xl font-bold mb-4 border-b pb-2">Program Overview</h2>
-		<p class="mb-4 text-gray-600">
-			All times in {data.location.includes('Austria') ? 'CET (UTC +1)' : 'ET (UTC -5)'}.
-		</p>
+		{#if data.program.length > 0}
+			<p class="mb-4 text-gray-600">
+				All times in {data.location.includes('Austria') ? 'CET (UTC +1)' : 'ET (UTC -5)'}.
+			</p>
 
-		<div class="overflow-x-auto">
-			<table class="min-w-full divide-y divide-gray-200">
-				<tbody class="bg-white divide-y divide-gray-200">
-					{#each data.program as session}
-						<tr>
-							<td
-								class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-32 align-top"
-							>
-								{session.time}
-							</td>
-							<td class="px-6 py-4 text-sm text-gray-500 align-top">
-								<div class="font-bold text-gray-900 text-base">{@html session.title}</div>
-								{#if session.content}
-									<div class="mt-1">{session.content}</div>
-								{/if}
-								{#if session.items}
-									<div class="mt-4 space-y-4">
-										{#each session.items as item}
-											<div>
-												<a
-													href={item.url}
-													target="_blank"
-													class="font-bold text-blue-600 hover:underline block"
-												>
-													{item.title}
-												</a>
-												<div class="text-gray-600">{item.authors}</div>
-											</div>
-										{/each}
-									</div>
-								{/if}
-							</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+			<div class="overflow-x-auto">
+				<table class="min-w-full divide-y divide-gray-200">
+					<tbody class="bg-white divide-y divide-gray-200">
+						{#each data.program as session}
+							<tr>
+								<td
+									class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-32 align-top"
+								>
+									{session.time}
+								</td>
+								<td class="px-6 py-4 text-sm text-gray-500 align-top">
+									<div class="font-bold text-gray-900 text-base">{@html session.title}</div>
+									{#if session.content}
+										<div class="mt-1">{session.content}</div>
+									{/if}
+									{#if session.items}
+										<div class="mt-4 space-y-4">
+											{#each session.items as item}
+												<div>
+													<a
+														href={item.url}
+														target="_blank"
+														class="font-bold text-blue-600 hover:underline block"
+													>
+														{item.title}
+													</a>
+													<div class="text-gray-600">{item.authors}</div>
+												</div>
+											{/each}
+										</div>
+									{/if}
+								</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
+			</div>
+		{:else}
+			<p class="text-gray-600">
+				The workshop program will be announced closer to the event date.
+			</p>
+		{/if}
 	</section>
 
 	<!-- Call for Participation -->

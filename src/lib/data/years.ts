@@ -38,6 +38,16 @@ export interface Person {
 	url?: string;
 }
 
+export interface Keynote {
+	name: string;
+	affiliation?: string;
+	url?: string;
+	title?: string;
+	abstract?: string;
+	bio?: string;
+	image?: string;
+}
+
 export interface YearData {
 	year: number;
 	location: string;
@@ -45,6 +55,8 @@ export interface YearData {
 	intro: string[];
 	examples: Example[];
 	dates: ImportantDate[];
+	keynote?: Keynote;
+	keynotes?: Keynote[];
 	program: Session[];
 	callForParticipation: string;
 	organizers: Person[];
@@ -229,6 +241,12 @@ export const years: Record<number, YearData> = {
 			{ date: 'September 14, 2026', event: 'Author Notification' },
 			{ date: 'October 16, 2026', event: 'Camera Ready Deadline' }
 		],
+		keynote: {
+			name: 'Leland McInnes',
+			affiliation: 'Tutte Institute for Mathematics and Computing',
+			title: 'The Challenges of Visualizing Very High Dimensional Data',
+			url: 'https://github.com/lmcinnes'
+		},
 		program: [],
 		callForParticipation:
 			'To make our work more accessible to the general audience, we are soliciting submissions in a novel format: blog-style posts and jupyter-like notebooks. In addition we also accept position papers in a more traditional form.',

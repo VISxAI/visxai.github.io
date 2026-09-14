@@ -33,6 +33,13 @@
 	// If not, we prepend '/' to the anchor links to go to the home page
 	let isContentPage = $derived($page.url.pathname === '/' || /^\/\d{4}$/.test($page.url.pathname));
 	let linkPrefix = $derived(isContentPage ? '' : '/');
+
+	let activeYearData = $derived(
+		$page.url.pathname === '/' || !/^\/\d{4}$/.test($page.url.pathname)
+			? years[latestYear]
+			: years[parseInt($page.url.pathname.slice(1))]
+	);
+	let hasKeynote = $derived(!!(activeYearData?.keynote || activeYearData?.keynotes?.length));
 </script>
 
 <svelte:window onclick={handleOutsideClick} />
@@ -51,6 +58,13 @@
 					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
 					>Submit</a
 				>
+				{#if hasKeynote}
+					<a
+						href="{linkPrefix}#keynote"
+						class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+						>Keynote</a
+					>
+				{/if}
 				<a
 					href="{linkPrefix}#program"
 					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
@@ -189,6 +203,13 @@
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium uppercase"
 				>Submit</a
 			>
+			{#if hasKeynote}
+				<a
+					href="{linkPrefix}#keynote"
+					class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+					>Keynote</a
+				>
+			{/if}
 			<a
 				href="{linkPrefix}#program"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
