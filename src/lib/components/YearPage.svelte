@@ -205,6 +205,7 @@
 		{#if data.program.length > 0}
 			<p class="mb-4 text-gray-600">
 				All times in {data.location.includes('Austria') ? 'CET (UTC +1)' : 'ET (UTC -5)'}.
+				{#if data.programNote}{data.programNote}{/if}
 			</p>
 
 			<div class="overflow-x-auto">

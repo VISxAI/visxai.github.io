@@ -58,6 +58,7 @@ export interface YearData {
 	keynote?: Keynote;
 	keynotes?: Keynote[];
 	program: Session[];
+	programNote?: string;
 	callForParticipation: string;
 	organizers: Person[];
 	steeringCommittee: Person[];
@@ -247,13 +248,125 @@ export const years: Record<number, YearData> = {
 			title: 'The Challenges of Visualizing Very High Dimensional Data',
 			url: 'https://github.com/lmcinnes'
 		},
-		program: [],
+		program: [
+			{ time: '1:00pm', title: 'Welcome from the Organizers' },
+			{
+				time: '1:10 -- 2:30',
+				title: 'Session I: Lightning Talks',
+				items: [
+					{
+						title: 'Interpreting Bio-Foundation Models with Sparse Autoencoders',
+						url: 'https://research.nvidia.com/labs/dbr/blog/bio-sae/',
+						authors: 'Jared Wilber, Tyler Carter Shimko'
+					},
+					{
+						title: 'New Francisco or San York? A Visual Explanation of Text Diffusion',
+						url: 'https://susiesyli.com/text-diffusion-explainer/',
+						authors: 'Susie S.Y. Li, Mingwei S.G. Li, Remco Chang'
+					},
+					{
+						title: 'Some Vector Algebra for Model Steering',
+						url: 'https://mwli.net/polygandr/',
+						authors: 'Mingwei S.G. Li, Susie S.Y. Li, Remco Chang'
+					},
+					{
+						title:
+							'Superposition Explainer: Visualizing Feature Overcompression Through Guided Experimentation',
+						url: 'https://philipmueller.dev/superposition-explainer/',
+						authors: 'Philip Müller, Peter Steinbach'
+					},
+					{
+						title: 'TokenTour: Tracing LLM Conversations from Messages to Tokens and KV Cache',
+						url: 'https://tokentour.github.io/chat2token/blog',
+						authors: 'Liwen Fan, Yu Zhang, Yuheng Zhao, Siming Chen'
+					},
+					{
+						title:
+							'Byte-Pair Encoding Explainer: An Interactive Visualization for Understanding Subword Tokenization',
+						url: 'https://philipmueller.dev/bpe-explainer/',
+						authors: 'Philip Müller, Peter Steinbach'
+					},
+					{
+						title:
+							'Embodied XAI Is All You Need: Tracing hierarchical VLM–PPO decisions via 4D spatio-temporal saliency',
+						url: 'https://isahalim.github.io/Embodied-XAI-Is-All-You-Need/',
+						authors: 'Suzan Mohammad Halim'
+					},
+					{
+						title: 'How to Win the Lottery within Neural Networks',
+						url: 'https://lthexplainable.vercel.app/',
+						authors: 'Ammar Nagri'
+					},
+					{
+						title: 'arxAIv: An AI Generated Research Universe',
+						url: 'https://allisonandreyev.github.io/arxaiv-blog/',
+						authors: 'Allison Andreyev'
+					},
+					{
+						title: 'The Story of Inference-Time Scaling and the training-time loop behind it',
+						url: 'https://inferencetimescaling.espud.org',
+						authors: 'Shashank Bangalore Lakshman, Scott Eiers'
+					},
+					{
+						title: 'The Confident Machine',
+						url: 'https://theconfidentmachine.espud.org',
+						authors: 'Shashank Bangalore Lakshman, Shravan Joshi'
+					},
+					{
+						title: 'More Features Than Neurons',
+						url: 'https://code259.github.io/more-features-than-neurons/',
+						authors: 'Nikhil Maturi'
+					},
+					{
+						title: 'NCDL Explainer: Non-Cartesian Deep Learning Explained',
+						url: 'https://visagg.cpsc.ucalgary.ca/ncdl-explainer/',
+						authors: 'Mohammad Sakib Hossain, Usman Alim'
+					}
+				]
+			},
+			{ time: '2:30 -- 3:00', title: 'Break' },
+			{
+				time: '3:00 -- 3:20',
+				title: 'Session II: Lightning Talks',
+				items: [
+					{
+						title: 'MoEXViz: Interactive Visualizations of Sparse Mixture-of-Experts',
+						url: 'https://resource-efficient-ai-lab.github.io/MoEXViz/',
+						authors: 'Chinmayee Raman, Hazim Hasan Bajamal, Reza Rawassizadeh'
+					},
+					{
+						title:
+							'Exploring The Geographic Assumptions in Text-to-Image Models with Underspecified Prompts',
+						url: 'https://t2i-geo-assumptions.jku-vds-lab.at',
+						authors: 'Giray Unlu, Amal Alnouri, Ahmed Mansour, Andreas Hinterreiter, Marc Streit'
+					},
+					{
+						title: 'Rectified Flow Explainer: A Visual Introduction to Rectified Flows',
+						url: 'https://alechelbling.com/blog/rectified-flow/',
+						authors: 'Alec Helbling'
+					},
+					{
+						title:
+							'Visualizing and Comparing Distributions of Language Model Generations: interactive article',
+						url: 'https://emilyreif.com/llm-consistency-vis/interactive_article/',
+						authors: 'Emily Reif, Claire Y Yang, Jared Hwang, Deniz Nazar, Noah Smith, Jeffrey Heer'
+					}
+				]
+			},
+			{
+				time: '3:20 -- 4:30',
+				title: 'Closing Keynote: Leland McInnes',
+				content: 'The Challenges of Visualizing Very High Dimensional Data'
+			},
+			{ time: '4:30', title: 'Closing' }
+		],
+		programNote: 'The workshop will be held in Hall America South.',
 		callForParticipation:
 			'To make our work more accessible to the general audience, we are soliciting submissions in a novel format: blog-style posts and jupyter-like notebooks. In addition we also accept position papers in a more traditional form.',
 
 		organizers: [
 			{ name: 'Alex Bäuerle', affiliation: 'Google DeepMind' },
-			{ name: 'Angie Boggust', affiliation: 'Massachusetts Institute of Technology' },
+			{ name: 'Angie Boggust', affiliation: 'Apple' },
 			{ name: 'Catherine Yeh', affiliation: 'Harvard University' },
 			{ name: 'Fred Hohman', affiliation: 'Apple' }
 		],
@@ -262,7 +375,28 @@ export const years: Record<number, YearData> = {
 			{ name: 'Hendrik Strobelt', affiliation: 'MIT-IBM Watson AI Lab' },
 			{ name: 'Mennatallah El-Assady', affiliation: 'ETH AI Center' }
 		],
-		pc: []
+		pc: [
+			'Jane Adams',
+			'Lena Armstrong',
+			'Hyemin Bang',
+			'Angus Forbes',
+			'Racquel Fygenson',
+			'Madeleine Grunde-McLaughlin',
+			'Alec Helbling',
+			'Seongmin Lee',
+			'Arpit Mathur',
+			'Katelyn Morrison',
+			'Kushin Mukherjee',
+			'Emily Reif',
+			'Rita Sevastjanova',
+			'Venkatesh Sivaraman',
+			'Shani Spivak',
+			'Helena Vasconcelos',
+			'Huichen Wang',
+			'James Wexler',
+			'Haoyang Yang',
+			'Ryan Yen'
+		]
 	},
 	2025: {
 		year: 2025,
