@@ -287,15 +287,15 @@ export const years: Record<number, YearData> = {
 						authors: 'Philip Müller, Peter Steinbach'
 					},
 					{
+						title: 'How to Win the Lottery within Neural Networks',
+						url: 'https://lthexplainable.vercel.app/',
+						authors: 'Ammar Nagri'
+					},
+					{
 						title:
 							'Embodied XAI Is All You Need: Tracing hierarchical VLM–PPO decisions via 4D spatio-temporal saliency',
 						url: 'https://isahalim.github.io/Embodied-XAI-Is-All-You-Need/',
 						authors: 'Suzan Mohammad Halim'
-					},
-					{
-						title: 'How to Win the Lottery within Neural Networks',
-						url: 'https://lthexplainable.vercel.app/',
-						authors: 'Ammar Nagri'
 					},
 					{
 						title: 'arxAIv: An AI Generated Research Universe',
