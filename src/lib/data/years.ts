@@ -67,6 +67,34 @@ export interface YearData {
 }
 
 export const bestPapers: Record<number, { title: string; url: string; authors: string }[]> = {
+	2026: [
+		{
+			title:
+				'Superposition Explainer: Visualizing Feature Overcompression Through Guided Experimentation',
+			url: 'https://philipmueller.dev/superposition-explainer/',
+			authors: 'Philip Müller, Peter Steinbach'
+		},
+		{
+			title: 'TokenTour: Tracing LLM Conversations from Messages to Tokens and KV Cache',
+			url: 'https://tokentour.github.io/chat2token/blog',
+			authors: 'Liwen Fan, Yu Zhang, Yuheng Zhao, Siming Chen'
+		},
+		{
+			title: 'New Francisco or San York? A Visual Explanation of Text Diffusion',
+			url: 'https://susiesyli.com/text-diffusion-explainer/',
+			authors: 'Susie S.Y. Li, Mingwei S.G. Li, Remco Chang'
+		},
+		{
+			title: 'Some Vector Algebra for Model Steering',
+			url: 'https://mwli.net/polygandr/',
+			authors: 'Mingwei S.G. Li, Susie S.Y. Li, Remco Chang'
+		},
+		{
+			title: 'Interpreting Bio-Foundation Models with Sparse Autoencoders',
+			url: 'https://research.nvidia.com/labs/dbr/blog/bio-sae/',
+			authors: 'Jared Wilber, Tyler Carter Shimko'
+		}
+	],
 	2025: [
 		{
 			title: 'Transformer Explainer: LLM Transformer Model Visually Explained',
