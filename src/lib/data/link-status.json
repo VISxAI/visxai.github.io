@@ -1,0 +1,530 @@
+{
+	"updatedAt": "2026-11-13",
+	"links": {
+		"http://aimacode.github.io/aima-javascript/5-Adversarial-Search/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"http://eprints.uwe.ac.uk/37807/1/visualising_networks.html": {
+			"status": "dead",
+			"code": null,
+			"since": "2026-11-13",
+			"error": "ConnectionRefused"
+		},
+		"http://formafluens.io/client/mix10.html": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"http://hdc.cs.arizona.edu/~mwli/grandtour/index.html": {
+			"status": "dead",
+			"code": null,
+			"since": "2026-11-13",
+			"error": "ConnectionRefused"
+		},
+		"http://jku-vds-lab.at/hoxai-at-visxai/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"http://nomic.ai/visxwiki": {
+			"status": "dead",
+			"code": 404,
+			"since": "2026-11-13"
+		},
+		"http://patch.baulab.info/demo/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"http://playground.tensorflow.org/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"http://talktoranker.njitvis.com/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"http://verbalization.lingvis.io/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"http://visxai-submission.xyz/article": {
+			"status": "dead",
+			"code": null,
+			"since": "2026-11-13",
+			"error": "ConnectionRefused"
+		},
+		"http://visxai.stefansietzen.at/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"http://www.cs.umd.edu/~amin/apps/visxai/sonification/": {
+			"status": "dead",
+			"code": 404,
+			"since": "2026-11-13"
+		},
+		"http://www.cs.williams.edu/~20nqc1/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"http://www.shawnfarris.io/research/graphicalDataRepresentations/": {
+			"status": "dead",
+			"code": 404,
+			"since": "2026-11-13"
+		},
+		"https://aarunku5.github.io/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://aeri206.github.io/explaining-explainable-ml/": {
+			"status": "dead",
+			"code": 404,
+			"since": "2026-11-13"
+		},
+		"https://alechelbling.com/blog/rectified-flow/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://allisonandreyev.github.io/arxaiv-blog/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://anomagram.fastforwardlabs.com/#/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://bert-vs-gpt2.dbvis.de/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://bib.dbvis.de/publications/details/787": {
+			"status": "dead",
+			"code": 404,
+			"since": "2026-11-13"
+		},
+		"https://cchen-vis.github.io/Narrative-Viz-for-Neural-Network-Robustness/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://code259.github.io/more-features-than-neurons/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://conformal-prediction.streamlit.app/": {
+			"status": "unknown",
+			"code": null,
+			"since": "2026-11-13",
+			"error": "23"
+		},
+		"https://distill.pub/2017/momentum/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://distill.pub/2019/visual-exploration-gaussian-processes/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://elanapearl.github.io/blog/2024/the-illustrated-alphafold/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://emilyreif.com/llm-consistency-vis/interactive_article/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://escape.ivia.ch/": {
+			"status": "dead",
+			"code": 404,
+			"since": "2026-11-13",
+			"error": "tls: UNABLE_TO_VERIFY_LEAF_SIGNATURE"
+		},
+		"https://explainability-vit.ivia.ch/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://gfn-playground.jku-vds-lab.at": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://github.com/MattJBritton/ForestfortheTrees": {
+			"status": "dead",
+			"code": 404,
+			"since": "2026-11-13"
+		},
+		"https://github.com/feedbackward/offgen": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://github.com/philippschmitt/embodied-ml": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://graphical-models.netlify.app": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://ibrahimalhazwani.github.io/distill-xai/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://icl-vis-ui.vercel.app/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://idyll.pub/post/dimensionality-reduction-293e465c2a3443e8941b016d/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://idyll.pub/post/visxai-dimensionality-reduction-1dbad0a67a092b007c526a45/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://induction-spotlight.vercel.app/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://inferencetimescaling.espud.org": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://interactive-maml.github.io/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://isahalim.github.io/Embodied-XAI-Is-All-You-Need/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://jku-vds-lab.github.io/amumo": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://julheg.github.io/waveletexplainability/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://k-means-explorable.vercel.app/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://lbynum.github.io/interactive-causal-inference/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://lm-bias.lingvis.io/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://lthexplainable.vercel.app/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://mlu-explain.github.io/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://mlu-explain.github.io/neural-networks/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://murphyka.github.io/information_explorable/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://mwli.net/polygandr/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://mybinder.org/v2/gh/Jindong-Explainable-AI/Bias_in_Machine_Learning/master?filepath=ML_Bias.ipynb": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://mybinder.org/v2/gh/KrishnaswamyLab/visualization_selection/master?filepath=Selecting_the_right_tool_for_the_job.ipynb": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://nipunbatra.github.io/hmm/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://observablehq.com/@clpuc/analyzing-the-design-space-for-visualizing-neural-attenti": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://observablehq.com/@krisrs1128/remembrances-of-states-past": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://observablehq.com/@visforpinns/visualization-for-understanding-pinns": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://pair-code.github.io/interpretability/text-dream/explainable/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://pair-code.github.io/interpretability/uncertainty-over-space/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://pair.withgoogle.com/explorables/fill-in-the-blank/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://pair.withgoogle.com/explorables/grokking/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://pair.withgoogle.com/explorables/patchscopes/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://parametric.press/issue-01/the-myth-of-the-impartial-machine/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://patel-zeel.github.io/active-learning-visualization/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://pbizopoulos.github.io/action-as-information/": {
+			"status": "dead",
+			"code": 404,
+			"since": "2026-11-13"
+		},
+		"https://philipmueller.dev/bpe-explainer/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://philipmueller.dev/superposition-explainer/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://poloclub.github.io/diffusion-explainer/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://poloclub.github.io/transformer-explainer/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://qnkxsovc.gitlab.io/prob-vis/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://research.google.com/bigpicture/attacking-discrimination-in-ml/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://research.nvidia.com/labs/dbr/blog/bio-sae/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://research.nvidia.com/labs/dbr/blog/illustrated-evo2/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://resource-efficient-ai-lab.github.io/MoEXViz/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://roadsfromabove.netlify.com/": {
+			"status": "dead",
+			"code": 404,
+			"since": "2026-11-13"
+		},
+		"https://ruthcfong.github.io/projects/interactive_overlay/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://spinthil.github.io/towards-an-interpretable-latent-space/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://susiesyli.com/text-diffusion-explainer/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://t2i-geo-assumptions.jku-vds-lab.at": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://theconfidentmachine.espud.org": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://theo-jaunet.github.io/MemoryReduction/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://theo-jaunet.github.io/theo-guesser/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://tiga1231.github.io/umap-tour/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://tokentour.github.io/chat2token/blog": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://towardsdatascience.com/deconstructing-bert-part-2-visualizing-the-inner-workings-of-attention-60a16d86b5c1": {
+			"status": "unknown",
+			"code": 403,
+			"since": "2026-11-13"
+		},
+		"https://unfair-machine.netlify.app/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://uvasrg.github.io/poisoning/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://visagg.cpsc.ucalgary.ca/ncdl-explainer/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://visual-intelligence-umn.github.io/GNN-101/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://visualizing-interpretable-model.vercel.app": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://visxai-aml.vercel.app/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://visxprojections.dbvis.de/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://wbt.siemens.com/filehosting/siplainables/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://www.cs.brandeis.edu/~dylan/pac_learning/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://www.explain-text-to-command.com/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://www.explainprompt.com": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://www.jgoertler.com/visual-exploration-gaussian-processes/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://www.moritzdueck.com/neighborhood-traces/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://www.pewresearch.org/interactives/how-does-a-computer-see-gender/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://xnought.github.io/backprop-explainer/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		},
+		"https://yizhe-ang.github.io/matrix-explorable/": {
+			"status": "live",
+			"code": 200,
+			"since": "2026-11-13"
+		}
+	}
+}

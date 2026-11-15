@@ -58,6 +58,11 @@
 					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
 					>Submit</a
 				>
+				<a
+					href="/archive"
+					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+					>Archive</a
+				>
 				{#if hasKeynote}
 					<a
 						href="{linkPrefix}#keynote"
@@ -202,6 +207,11 @@
 				href="/submit"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium uppercase"
 				>Submit</a
+			>
+			<a
+				href="/archive"
+				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+				>Archive</a
 			>
 			{#if hasKeynote}
 				<a

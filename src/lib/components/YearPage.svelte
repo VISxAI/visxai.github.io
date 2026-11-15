@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { type YearData, bestPapers, years } from '$lib/data/years';
+	import { isOffline } from '$lib/data/submissions';
+	import OfflineBadge from './OfflineBadge.svelte';
 
 	let { data }: { data: YearData } = $props();
 
@@ -96,9 +98,12 @@
 				{#each data.examples as example, i}
 			<li>
 			({String.fromCharCode(97 + i)})
-			<a href={example.url} target="_blank" class="font-bold text-blue-600 hover:underline"
+			<a
+				href={example.url}
+				target="_blank"
+				class="font-bold hover:underline {isOffline(example.url) ? 'text-gray-500' : 'text-blue-600'}"
 				>{example.title}</a
-			>
+			><OfflineBadge url={example.url} />
 			by {example.authors}
 			{#if example.year}
 				(<a
@@ -227,13 +232,19 @@
 										<div class="mt-4 space-y-4">
 											{#each session.items as item}
 												<div>
-													<a
-														href={item.url}
-														target="_blank"
-														class="font-bold text-blue-600 hover:underline block"
-													>
-														{item.title}
-													</a>
+													{#if item.url}
+														<a
+															href={item.url}
+															target="_blank"
+															class="font-bold hover:underline {isOffline(item.url)
+																? 'text-gray-500'
+																: 'text-blue-600'}"
+														>
+															{item.title}
+														</a><OfflineBadge url={item.url} />
+													{:else}
+														<span class="font-bold text-gray-900">{item.title}</span>
+													{/if}
 													<div class="text-gray-600">{item.authors}</div>
 												</div>
 											{/each}
@@ -282,9 +293,14 @@
 				<h5 class="text-lg font-bold">VISxAI {yearEntry.year}</h5>
 				{#each yearEntry.items as item}
 					<div class="flex flex-col">
-						<a href={item.url} target="_blank" class="font-bold text-blue-600 hover:underline"
-							>{item.title}</a
-						>
+						<div>
+							<a
+								href={item.url}
+								target="_blank"
+								class="font-bold hover:underline {isOffline(item.url) ? 'text-gray-500' : 'text-blue-600'}"
+								>{item.title}</a
+							><OfflineBadge url={item.url} />
+						</div>
 						<span class="text-gray-600">{item.authors}</span>
 					</div>
 				{/each}

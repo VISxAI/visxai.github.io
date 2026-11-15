@@ -1,0 +1,41 @@
+name: Check submission links
+
+on:
+  schedule:
+    - cron: '0 6 1 * *' # 06:00 UTC on the 1st of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Check links
+        run: bun scripts/check-links.ts
+
+      # Only opens/updates a PR when a link's status changed, so a human can
+      # confirm before anything is marked offline on the site.
+      - name: Open PR with status changes
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/link-status
+          commit-message: Update submission link status
+          title: Update submission link status
+          body: |
+            The monthly link check found submissions whose status changed.
+            Please spot-check the links marked `dead` before merging. If a check
+            is wrong, add the URL to `src/lib/data/link-overrides.json`.
+          add-paths: src/lib/data/link-status.json
+          delete-branch: true
