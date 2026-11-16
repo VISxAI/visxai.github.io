@@ -18,6 +18,18 @@
 		isMobileYearDropdownOpen = !isMobileYearDropdownOpen;
 	}
 
+	function closeMenu() {
+		isMenuOpen = false;
+		isMobileYearDropdownOpen = false;
+	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			closeMenu();
+			isYearDropdownOpen = false;
+		}
+	}
+
 	function handleOutsideClick(event: MouseEvent) {
 		if (isYearDropdownOpen && !(event.target as Element).closest('.year-dropdown-container')) {
 			isYearDropdownOpen = false;
@@ -42,7 +54,7 @@
 	let hasKeynote = $derived(!!(activeYearData?.keynote || activeYearData?.keynotes?.length));
 </script>
 
-<svelte:window onclick={handleOutsideClick} />
+<svelte:window onclick={handleOutsideClick} onkeydown={handleKeydown} />
 
 <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -159,7 +171,7 @@
 					type="button"
 					class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
 					aria-controls="mobile-menu"
-					aria-expanded="false"
+					aria-expanded={isMenuOpen}
 					onclick={toggleMenu}
 				>
 					<span class="sr-only">Open main menu</span>
@@ -201,54 +213,59 @@
 	</div>
 
 	<!-- Mobile menu, show/hide based on menu state. -->
-	<div class="{isMenuOpen ? 'block' : 'hidden'} md:hidden" id="mobile-menu">
+	<div
+		class="{isMenuOpen
+			? 'block'
+			: 'hidden'} md:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain"
+		id="mobile-menu"
+	>
 		<div class="px-2 pt-2 pb-3 space-y-1">
 			<a
 				href="/submit"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium uppercase"
-				>Submit</a
+				onclick={closeMenu}>Submit</a
 			>
 			<a
 				href="/archive"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				>Archive</a
+				onclick={closeMenu}>Archive</a
 			>
 			{#if hasKeynote}
 				<a
 					href="{linkPrefix}#keynote"
 					class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-					>Keynote</a
+					onclick={closeMenu}>Keynote</a
 				>
 			{/if}
 			<a
 				href="{linkPrefix}#program"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				>Program</a
+				onclick={closeMenu}>Program</a
 			>
 			<a
 				href="{linkPrefix}#dates"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				>Dates</a
+				onclick={closeMenu}>Dates</a
 			>
 			<a
 				href="{linkPrefix}#call"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				>CFP</a
+				onclick={closeMenu}>CFP</a
 			>
 			<a
 				href="{linkPrefix}#hall-of-fame"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				>Hall of Fame</a
+				onclick={closeMenu}>Hall of Fame</a
 			>
 			<a
 				href="{linkPrefix}#orga"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				>Organizers</a
+				onclick={closeMenu}>Organizers</a
 			>
 			<a
 				href="{linkPrefix}#pc"
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				>PC</a
+				onclick={closeMenu}>PC</a
 			>
 			<button
 				type="button"
@@ -279,7 +296,7 @@
 							<a
 								href="/{year}"
 								class="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-								>{year}</a
+								onclick={closeMenu}>{year}</a
 							>
 						{/if}
 					{/each}
