@@ -24,6 +24,7 @@ export interface Session {
 	time: string;
 	title: string;
 	content?: string;
+	recordingUrl?: string;
 	items?: SessionItem[];
 }
 
@@ -46,6 +47,7 @@ export interface Keynote {
 	abstract?: string;
 	bio?: string;
 	image?: string;
+	videoId?: string; // YouTube video ID of the talk recording
 }
 
 export interface YearData {
@@ -274,7 +276,8 @@ export const years: Record<number, YearData> = {
 			name: 'Leland McInnes',
 			affiliation: 'Tutte Institute for Mathematics and Computing',
 			title: 'The Challenges of Visualizing Very High Dimensional Data',
-			url: 'https://github.com/lmcinnes'
+			url: 'https://github.com/lmcinnes',
+			videoId: 'hbCQ0PdI85Y'
 		},
 		program: [
 			{ time: '1:00pm', title: 'Welcome from the Organizers' },
@@ -384,7 +387,8 @@ export const years: Record<number, YearData> = {
 			{
 				time: '3:20 -- 4:30',
 				title: 'Closing Keynote: Leland McInnes',
-				content: 'The Challenges of Visualizing Very High Dimensional Data'
+				content: 'The Challenges of Visualizing Very High Dimensional Data',
+				recordingUrl: 'https://www.youtube.com/watch?v=hbCQ0PdI85Y'
 			},
 			{ time: '4:30', title: 'Closing' }
 		],

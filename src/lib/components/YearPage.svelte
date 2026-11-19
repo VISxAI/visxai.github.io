@@ -183,6 +183,28 @@
 										<h4 class="text-lg font-semibold text-gray-900">
 											{keynote.title}
 										</h4>
+										{#if keynote.videoId}
+											<a
+												href="https://www.youtube.com/watch?v={keynote.videoId}"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="mt-1 inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline"
+											>
+												Watch on YouTube
+												<svg
+													viewBox="0 0 24 24"
+													class="w-3.5 h-3.5"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="2.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													aria-hidden="true"
+												>
+													<path d="M7 17L17 7M8 7h9v9" />
+												</svg>
+											</a>
+										{/if}
 										{#if keynote.abstract}
 											<p class="mt-2 text-gray-700 leading-relaxed text-sm md:text-base">
 												{keynote.abstract}
@@ -226,7 +248,18 @@
 								<td class="px-6 py-4 text-sm text-gray-500 align-top">
 									<div class="font-bold text-gray-900 text-base">{@html session.title}</div>
 									{#if session.content}
-										<div class="mt-1">{session.content}</div>
+										<div class="mt-1">
+											{#if session.recordingUrl}
+												<a
+													href={session.recordingUrl}
+													target="_blank"
+													rel="noopener noreferrer"
+													class="font-bold text-blue-600 hover:underline">{session.content}</a
+												>
+											{:else}
+												{session.content}
+											{/if}
+										</div>
 									{/if}
 									{#if session.items}
 										<div class="mt-4 space-y-4">
