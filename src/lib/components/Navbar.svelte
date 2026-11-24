@@ -71,11 +71,6 @@
 				</a>
 				<a href="/submit" class={navLinkClass(pathname === '/submit')}>Submit</a>
 				<a
-					href="{workshopAnchorPrefix}#hall-of-fame"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-					>Hall of Fame</a
-				>
-				<a
 					href="{workshopAnchorPrefix}#orga"
 					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
 					>Organizers</a
@@ -205,12 +200,6 @@
 				onclick={closeMenu}
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
 				>Submit</a
-			>
-			<a
-				href="{workshopAnchorPrefix}#hall-of-fame"
-				onclick={closeMenu}
-				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				>Hall of Fame</a
 			>
 			<a
 				href="{workshopAnchorPrefix}#orga"

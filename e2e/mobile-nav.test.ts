@@ -34,7 +34,7 @@ test.describe('mobile navigation', () => {
 		const menu = page.locator('#mobile-menu');
 		await expect(menu).toBeVisible();
 
-		await menu.getByRole('link', { name: 'Hall of Fame' }).click();
+		await menu.getByRole('link', { name: 'Organizers' }).click();
 		await expect(menu).toBeHidden();
 	});
 });
