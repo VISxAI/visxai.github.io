@@ -1,7 +1,13 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { type YearData, bestPapers, years } from '$lib/data/years';
-	import { isOffline } from '$lib/data/submissions';
+	import {
+		type ImportantDate,
+		type PresentationType,
+		type YearData,
+		bestPapers,
+		years
+	} from '$lib/data/years';
+	import { formatAcceptedDate, getRollingSubmissions, isOffline } from '$lib/data/submissions';
 	import OfflineBadge from './OfflineBadge.svelte';
 
 	let { data }: { data: YearData } = $props();
@@ -12,10 +18,21 @@
 			.filter((entry) => entry.year <= data.year)
 			.sort((a, b) => b.year - a.year)
 	);
-	let visibleKeynotes = $derived(
-		data.keynotes ?? (data.keynote ? [data.keynote] : [])
+	let visibleKeynotes = $derived(data.keynotes ?? (data.keynote ? [data.keynote] : []));
+	let rollingSubmissions = $derived(getRollingSubmissions(data.year));
+	let callParagraphs = $derived(
+		Array.isArray(data.callForParticipation)
+			? data.callForParticipation
+			: [data.callForParticipation]
 	);
 	let currentYear = Math.max(...Object.keys(years).map(Number));
+
+	const presentationLabels: Record<PresentationType, string> = {
+		talk: 'Talk',
+		poster: 'Poster',
+		demo: 'Demo',
+		online: 'Published'
+	};
 
 	function getEditionNumber(year: number): string {
 		const edition = year - 2018 + 1; // 2018 was the 1st workshop
@@ -24,7 +41,9 @@
 		return edition + (suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0]);
 	}
 
-	function isPast(dateStr: string): boolean {
+	function isPast(item: ImportantDate): boolean {
+		if (item.ongoing) return false;
+		const dateStr = item.date;
 		const now = new Date();
 		let clean = dateStr
 			.replace(/,?\s*anywhere/i, '')
@@ -70,7 +89,7 @@
 		<span class="text-black">Visualization for AI Explainability</span>
 		</h1>
 		<p class="text-xl text-gray-600">
-		{data.date} at IEEE VIS in {data.location}
+		{data.date} at IEEE VIS{#if data.location && data.location !== 'TBD'} in {data.location}{/if}
 		</p>
 	</div>
 	<div class="mb-4 md:mt-0 order-1 md:order-2">
@@ -88,7 +107,7 @@
 	<!-- Examples Image -->
 	<div class="mb-12 text-center">
 		<img
-			src="{base}/img/examples-{data.year}.png"
+			src="{base}{data.examplesImage ?? `/img/examples-${data.year}.png`}"
 			alt="Examples {data.year}"
 			class="mx-auto max-w-full h-auto mb-4 rounded shadow-sm"
 		/>
@@ -122,20 +141,69 @@
 		<h2 class="text-2xl font-bold mb-4 border-b pb-2">Important Dates</h2>
 		<div class="bg-gray-50 p-6 rounded-lg font-mono text-sm md:text-base">
 			{#each data.dates as date}
-			<div class="mb-2">
-				{#if isPast(date.date) || date.strikethrough}
-					<span class="line-through text-gray-400">{date.date}</span>:
-					<span class="text-gray-400">{date.event}</span>
-				{:else}
-					{#if date.previousDate}
-						<span class="line-through text-gray-500">{date.previousDate}</span>{' '}
+				<div class="mb-2">
+					{#if isPast(date) || date.strikethrough}
+						<span class="line-through text-gray-400">{date.date}</span>:
+						<span class="text-gray-400">{date.event}</span>
+					{:else}
+						{#if date.previousDate}
+							<span class="line-through text-gray-500">{date.previousDate}</span>{' '}
+						{/if}
+						<span class="font-bold">{date.date}</span>: {date.event}
 					{/if}
-					<span class="font-bold">{date.date}</span>: {date.event}
-				{/if}
-			</div>
-		{/each}
+				</div>
+			{/each}
 		</div>
 	</section>
+
+	<!-- Accepted Explainables (Rolling Editions) -->
+	{#if data.rolling || rollingSubmissions.length > 0}
+		<section id="submissions" class="mb-12">
+			<div class="flex items-baseline justify-between border-b pb-2 mb-4">
+				<h2 class="text-2xl font-bold">Accepted Explainables ({data.year})</h2>
+				<a href="/" class="text-sm text-blue-600 hover:underline">Browse all years →</a>
+			</div>
+			{#if rollingSubmissions.length > 0}
+				<ul class="divide-y divide-gray-200">
+					{#each rollingSubmissions as item (item.url)}
+						{@const dateLabel = formatAcceptedDate(item.acceptedDate) ?? String(data.year)}
+						<li class="py-4 flex flex-col sm:flex-row sm:gap-4 gap-1">
+							<span class="shrink-0 sm:w-20 text-xs sm:text-sm font-mono text-gray-500 sm:pt-0.5">
+								{dateLabel}
+							</span>
+							<div class="min-w-0 flex-1">
+								<div>
+									<a
+										href={item.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="font-bold hover:underline {isOffline(item.url)
+											? 'text-gray-500'
+											: 'text-blue-600'}"
+									>
+										{item.title}
+									</a>{#if item.presentationType && item.presentationType !== 'online'}<span
+											class="inline-block align-middle ml-1.5 px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wide bg-blue-50 text-blue-700 border border-blue-200"
+											>{presentationLabels[item.presentationType]}</span
+										>{/if}<OfflineBadge url={item.url} />
+								</div>
+								<div class="text-gray-600 text-sm">{item.authors}</div>
+								{#if item.abstract}
+									<p class="text-gray-700 text-sm mt-1.5 leading-relaxed">{item.abstract}</p>
+								{/if}
+							</div>
+						</li>
+					{/each}
+				</ul>
+			{:else}
+				<p class="text-gray-600">
+					Rolling submissions for VISxAI {data.year} are open. Accepted explainables will be
+					published here and on the <a href="/" class="text-blue-600 hover:underline">main feed</a>
+					as they pass review.
+				</p>
+			{/if}
+		</section>
+	{/if}
 
 	<!-- Keynote -->
 	{#if visibleKeynotes.length > 0}
@@ -231,7 +299,8 @@
 		<h2 class="text-2xl font-bold mb-4 border-b pb-2">Program Overview</h2>
 		{#if data.program.length > 0}
 			<p class="mb-4 text-gray-600">
-				All times in {data.location.includes('Austria') ? 'CET (UTC +1)' : 'ET (UTC -5)'}.
+				All times in {data.timezone ??
+					(data.location.includes('Austria') ? 'CET (UTC +1)' : 'ET (UTC -5)')}.
 				{#if data.programNote}{data.programNote}{/if}
 			</p>
 
@@ -300,8 +369,10 @@
 	{#if data.year === currentYear}
 		<section id="call" class="mb-12">
 			<h2 class="text-2xl font-bold mb-4 border-b pb-2">Call for Participation</h2>
-			<div class="prose max-w-none">
-				<p class="mb-4">{data.callForParticipation}</p>
+			<div class="prose max-w-none space-y-4">
+				{#each callParagraphs as paragraph}
+					<p>{paragraph}</p>
+				{/each}
 				<div class="mt-6">
 					<a
 						href="/submit"
@@ -367,10 +438,16 @@
 	<!-- PC -->
 	<section id="pc" class="mb-12">
 		<h2 class="text-2xl font-bold mb-4 border-b pb-2">Program Committee and Reviewers</h2>
-		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-			{#each data.pc as person}
-				<div>{person}</div>
-			{/each}
-		</div>
+		{#if data.pc.length > 0}
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+				{#each data.pc as person}
+					<div>{person}</div>
+				{/each}
+			</div>
+		{:else}
+			<p class="text-gray-600">
+				The {data.year} Program Committee and rolling reviewer pool will be listed here soon.
+			</p>
+		{/if}
 	</section>
 </div>

@@ -36,22 +36,17 @@
 		}
 	}
 
-	// Get available years for the dropdown/list
 	const availableYears = Object.keys(years)
 		.map(Number)
 		.sort((a, b) => b - a);
 
-	// Determine if we are on a page that has the sections (home or year page)
-	// If not, we prepend '/' to the anchor links to go to the home page
-	let isContentPage = $derived($page.url.pathname === '/' || /^\/\d{4}$/.test($page.url.pathname));
-	let linkPrefix = $derived(isContentPage ? '' : '/');
+	let pathname = $derived($page.url.pathname);
 
-	let activeYearData = $derived(
-		$page.url.pathname === '/' || !/^\/\d{4}$/.test($page.url.pathname)
-			? years[latestYear]
-			: years[parseInt($page.url.pathname.slice(1))]
-	);
-	let hasKeynote = $derived(!!(activeYearData?.keynote || activeYearData?.keynotes?.length));
+	function navLinkClass(active: boolean): string {
+		return active
+			? 'text-gray-900 font-semibold px-3 py-2 rounded-md text-sm'
+			: 'text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium';
+	}
 </script>
 
 <svelte:window onclick={handleOutsideClick} onkeydown={handleKeydown} />
@@ -64,55 +59,18 @@
 					<a href="/" class="text-xl font-bold font-mono tracking-tighter">VISxAI</a>
 				</div>
 			</div>
-			<div class="hidden md:flex md:items-center md:space-x-4">
+			<div class="hidden md:flex md:items-center md:space-x-2">
+				<a href="/" class={navLinkClass(pathname === '/')}>Explainables</a>
 				<a
-					href="/submit"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-					>Submit</a
+					href="/workshop"
+					class={navLinkClass(pathname === '/workshop' || pathname === `/${latestYear}`)}
 				>
-				<a
-					href="/archive"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-					>Archive</a
-				>
-				{#if hasKeynote}
-					<a
-						href="{linkPrefix}#keynote"
-						class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-						>Keynote</a
-					>
-				{/if}
-				<a
-					href="{linkPrefix}#program"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-					>Program</a
-				>
-				<a
-					href="{linkPrefix}#dates"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-					>Dates</a
-				>
-				<a
-					href="{linkPrefix}#call"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">CFP</a
-				>
-				<a
-					href="{linkPrefix}#hall-of-fame"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-					>Hall of Fame</a
-				>
-				<a
-					href="{linkPrefix}#orga"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-					>Organizers</a
-				>
-				<a
-					href="{linkPrefix}#pc"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">PC</a
-				>
+					Workshop ({latestYear})
+				</a>
+				<a href="/submit" class={navLinkClass(pathname === '/submit')}>Submit</a>
 
-				<!-- Year Dropdown -->
-				<div class="relative ml-3 year-dropdown-container">
+				<!-- Past Years Dropdown -->
+				<div class="relative ml-2 year-dropdown-container">
 					<div>
 						<button
 							type="button"
@@ -124,7 +82,7 @@
 						>
 							Past Years
 							<svg
-								class="-mr-1 ml-2 h-5 w-5"
+								class="-mr-1 ml-1.5 h-5 w-5"
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 20 20"
 								fill="currentColor"
@@ -141,13 +99,13 @@
 
 					{#if isYearDropdownOpen}
 						<div
-							class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+							class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
 							role="menu"
 							aria-orientation="vertical"
 							aria-labelledby="year-menu-button"
 							tabindex="-1"
 						>
-							{#each availableYears as year}
+							{#each availableYears as year (year)}
 								{#if year !== latestYear}
 									<a
 										href="/{year}"
@@ -175,7 +133,6 @@
 					onclick={toggleMenu}
 				>
 					<span class="sr-only">Open main menu</span>
-					<!-- Icon when menu is closed -->
 					<svg
 						class="{isMenuOpen ? 'hidden' : 'block'} h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +148,6 @@
 							d="M4 6h16M4 12h16M4 18h16"
 						/>
 					</svg>
-					<!-- Icon when menu is open -->
 					<svg
 						class="{isMenuOpen ? 'block' : 'hidden'} h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
@@ -212,60 +168,31 @@
 		</div>
 	</div>
 
-	<!-- Mobile menu, show/hide based on menu state. -->
+	<!-- Mobile menu -->
 	<div
 		class="{isMenuOpen
 			? 'block'
-			: 'hidden'} md:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain"
+			: 'hidden'} md:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-gray-100"
 		id="mobile-menu"
 	>
 		<div class="px-2 pt-2 pb-3 space-y-1">
 			<a
+				href="/"
+				onclick={closeMenu}
+				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+				>Explainables</a
+			>
+			<a
+				href="/workshop"
+				onclick={closeMenu}
+				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+				>Workshop ({latestYear})</a
+			>
+			<a
 				href="/submit"
-				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium uppercase"
-				onclick={closeMenu}>Submit</a
-			>
-			<a
-				href="/archive"
+				onclick={closeMenu}
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				onclick={closeMenu}>Archive</a
-			>
-			{#if hasKeynote}
-				<a
-					href="{linkPrefix}#keynote"
-					class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-					onclick={closeMenu}>Keynote</a
-				>
-			{/if}
-			<a
-				href="{linkPrefix}#program"
-				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				onclick={closeMenu}>Program</a
-			>
-			<a
-				href="{linkPrefix}#dates"
-				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				onclick={closeMenu}>Dates</a
-			>
-			<a
-				href="{linkPrefix}#call"
-				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				onclick={closeMenu}>CFP</a
-			>
-			<a
-				href="{linkPrefix}#hall-of-fame"
-				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				onclick={closeMenu}>Hall of Fame</a
-			>
-			<a
-				href="{linkPrefix}#orga"
-				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				onclick={closeMenu}>Organizers</a
-			>
-			<a
-				href="{linkPrefix}#pc"
-				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				onclick={closeMenu}>PC</a
+				>Submit</a
 			>
 			<button
 				type="button"
@@ -291,12 +218,13 @@
 			</button>
 			{#if isMobileYearDropdownOpen}
 				<div class="pl-4 space-y-1">
-					{#each availableYears as year}
+					{#each availableYears as year (year)}
 						{#if year !== latestYear}
 							<a
 								href="/{year}"
+								onclick={closeMenu}
 								class="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-								onclick={closeMenu}>{year}</a
+								>{year}</a
 							>
 						{/if}
 					{/each}

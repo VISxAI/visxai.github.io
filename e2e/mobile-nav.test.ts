@@ -34,7 +34,7 @@ test.describe('mobile navigation', () => {
 		const menu = page.locator('#mobile-menu');
 		await expect(menu).toBeVisible();
 
-		await menu.getByRole('link', { name: 'Program' }).click();
+		await menu.getByRole('link', { name: 'Submit' }).click();
 		await expect(menu).toBeHidden();
 	});
 });
