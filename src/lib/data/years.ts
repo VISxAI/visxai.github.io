@@ -12,6 +12,21 @@ export interface ImportantDate {
 	event: string;
 	strikethrough?: boolean;
 	previousDate?: string;
+	ongoing?: boolean;
+}
+
+export type PresentationType = 'talk' | 'poster' | 'demo' | 'online';
+
+export interface AcceptedSubmission {
+	title: string;
+	url: string;
+	authors: string;
+	/** ISO calendar date (YYYY-MM-DD) or year-month (YYYY-MM) when accepted/published. */
+	acceptedDate?: string;
+	/** Short 1-2 sentence summary shown in the editorial stream. */
+	abstract?: string;
+	/** Conference presentation status once the annual program is selected. */
+	presentationType?: PresentationType;
 }
 
 export interface SessionItem {
@@ -54,14 +69,18 @@ export interface YearData {
 	year: number;
 	location: string;
 	date: string;
+	timezone?: string;
+	rolling?: boolean;
 	intro: string[];
 	examples: Example[];
+	examplesImage?: string;
 	dates: ImportantDate[];
 	keynote?: Keynote;
 	keynotes?: Keynote[];
+	submissions?: AcceptedSubmission[];
 	program: Session[];
 	programNote?: string;
-	callForParticipation: string;
+	callForParticipation: string | string[];
 	organizers: Person[];
 	steeringCommittee: Person[];
 	pc: string[];
@@ -210,6 +229,86 @@ export const bestPapers: Record<number, { title: string; url: string; authors: s
 };
 
 export const years: Record<number, YearData> = {
+	2027: {
+		year: 2027,
+		location: 'TBD',
+		date: 'Fall 2027',
+		rolling: true,
+		examplesImage: '/img/examples-2026.png',
+		intro: [
+			'The role of visualization in artificial intelligence (AI) continues to grow alongside the complexity of modern AI systems. Clear, interactive visual explanations are more valuable than ever for helping researchers and practitioners understand how AI techniques work.',
+			'Starting with VISxAI X (2027), we are moving to rolling submissions: high-quality explainables and explorables are reviewed and published on visxai.io throughout the year, culminating in an in-person workshop at IEEE VIS featuring selected talks, keynotes, and open community discussion.'
+		],
+		examples: [
+			{
+				title:
+					'Superposition Explainer: Visualizing Feature Overcompression Through Guided Experimentation',
+				url: 'https://philipmueller.dev/superposition-explainer/',
+				authors: 'Philip Müller, Peter Steinbach',
+				year: 2026
+			},
+			{
+				title: 'TokenTour: Tracing LLM Conversations from Messages to Tokens and KV Cache',
+				url: 'https://tokentour.github.io/chat2token/blog',
+				authors: 'Liwen Fan, Yu Zhang, Yuheng Zhao, Siming Chen',
+				year: 2026
+			},
+			{
+				title: 'New Francisco or San York? A Visual Explanation of Text Diffusion',
+				url: 'https://susiesyli.com/text-diffusion-explainer/',
+				authors: 'Susie S.Y. Li, Mingwei S.G. Li, Remco Chang',
+				year: 2026
+			},
+			{
+				title: 'Transformer Explainer: LLM Transformer Model Visually Explained',
+				url: 'https://poloclub.github.io/transformer-explainer/',
+				authors: 'Cho, Kim, Karpekov, Helbling, Wang, Lee, Hoover, Chau',
+				year: 2025
+			},
+			{
+				title: 'Can Large Language Models Explain Their Internal Mechanisms?',
+				url: 'https://pair.withgoogle.com/explorables/patchscopes/',
+				authors: 'Hussein, Ghandeharioun, Mullins, Reif, Wilson, Thain, Dixon',
+				year: 2024
+			}
+		],
+		dates: [
+			{
+				date: 'Open year-round',
+				event: 'Rolling Explainable Submissions',
+				ongoing: true
+			},
+			{
+				date: 'Summer 2027 (TBD)',
+				event: 'Cutoff for VISxAI X Conference Talk Consideration',
+				ongoing: true
+			},
+			{
+				date: 'Fall 2027 (TBD)',
+				event: 'VISxAI X Workshop at IEEE VIS (In-Person)',
+				ongoing: true
+			}
+		],
+		submissions: [],
+		program: [],
+		callForParticipation: [
+			'VISxAI X accepts rolling submissions of interactive visual explainables, explorables, and notebook-style articles throughout the year. Accepted submissions are published immediately on visxai.io so the community can explore and share them ahead of the conference.',
+			'To keep the bar high and the workshop engaging, we select the top accepted explainables from the year for in-person presentation slots at IEEE VIS, alongside keynotes and unconf-style open discussion. Additional accepted authors may be invited to share their work as a poster or interactive demo.',
+			'Please note that conference presentations at VISxAI X are in-person only.'
+		],
+		organizers: [
+			{ name: 'Alex Bäuerle', affiliation: 'Google DeepMind' },
+			{ name: 'Angie Boggust', affiliation: 'Apple' },
+			{ name: 'Catherine Yeh', affiliation: 'Harvard University' },
+			{ name: 'Fred Hohman', affiliation: 'Apple' }
+		],
+		steeringCommittee: [
+			{ name: 'Adam Perer', affiliation: 'Carnegie Mellon University' },
+			{ name: 'Hendrik Strobelt', affiliation: 'MIT-IBM Watson AI Lab' },
+			{ name: 'Mennatallah El-Assady', affiliation: 'ETH AI Center' }
+		],
+		pc: []
+	},
 	2026: {
 		year: 2026,
 		location: 'Boston, MA',
@@ -1806,4 +1905,4 @@ export const getYearData = (year: number): YearData | undefined => {
 	return years[year];
 };
 
-export const latestYear = 2026;
+export const latestYear = 2027;

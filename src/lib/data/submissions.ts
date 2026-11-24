@@ -1,6 +1,8 @@
-import { bestPapers, years } from './years';
+import { bestPapers, years, type AcceptedSubmission, type PresentationType } from './years';
 import linkStatus from './link-status.json';
 import linkOverrides from './link-overrides.json';
+
+export type { AcceptedSubmission, PresentationType };
 
 /**
  * - live: the URL responded successfully on the last check
@@ -29,10 +31,53 @@ export interface Submission {
 	authors: string;
 	url: string;
 	year: number;
+	acceptedDate?: string;
+	abstract?: string;
+	presentationType?: PresentationType;
+	rolling?: boolean;
 	session?: string;
 	award: boolean;
 	status: LinkState;
 	statusSince?: string;
+}
+
+const MONTH_ABBR = [
+	'Jan',
+	'Feb',
+	'Mar',
+	'Apr',
+	'May',
+	'Jun',
+	'Jul',
+	'Aug',
+	'Sep',
+	'Oct',
+	'Nov',
+	'Dec'
+];
+
+/**
+ * Format an ISO calendar date (YYYY-MM-DD or YYYY-MM) into "Mon YYYY" without
+ * constructing a timezone-dependent Date instant.
+ */
+export function formatAcceptedDate(iso?: string): string | undefined {
+	if (!iso) return undefined;
+	const match = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(iso.trim());
+	if (!match) return iso;
+	const year = match[1];
+	const monthIdx = Number(match[2]) - 1;
+	const month = MONTH_ABBR[monthIdx];
+	return month ? `${month} ${year}` : year;
+}
+
+export function sortSubmissions(list: Submission[]): Submission[] {
+	return [...list].sort((a, b) => {
+		if (b.year !== a.year) return b.year - a.year;
+		const aDate = a.acceptedDate ?? '';
+		const bDate = b.acceptedDate ?? '';
+		if (aDate !== bDate) return bDate.localeCompare(aDate);
+		return a.title.localeCompare(b.title);
+	});
 }
 
 const statusFile = linkStatus as LinkStatusFile;
@@ -61,8 +106,8 @@ function stripHtml(s: string): string {
 }
 
 /**
- * Every accepted submission across all years: program items with a URL, plus
- * Hall of Fame entries (deduplicated by year + URL).
+ * Every accepted submission across all years: rolling/accepted entries, program
+ * items with a URL, plus Hall of Fame entries (deduplicated by year + URL).
  */
 export function getAllSubmissions(): Submission[] {
 	const byKey = new Map<string, Submission>();
@@ -71,20 +116,40 @@ export function getAllSubmissions(): Submission[] {
 	);
 
 	const add = (
-		item: { title: string; url?: string; authors: string },
+		item: {
+			title: string;
+			url?: string;
+			authors: string;
+			acceptedDate?: string;
+			abstract?: string;
+			presentationType?: PresentationType;
+		},
 		year: number,
-		session?: string
+		opts: { session?: string; rolling?: boolean } = {}
 	) => {
 		if (!item.url) return;
 		const key = `${year}|${item.url}`;
-		if (byKey.has(key)) return;
+		const existing = byKey.get(key);
+		if (existing) {
+			if (!existing.session && opts.session) existing.session = opts.session;
+			if (!existing.presentationType && item.presentationType) {
+				existing.presentationType = item.presentationType;
+			}
+			if (!existing.acceptedDate && item.acceptedDate) existing.acceptedDate = item.acceptedDate;
+			if (!existing.abstract && item.abstract) existing.abstract = item.abstract;
+			return;
+		}
 		byKey.set(key, {
 			id: key,
 			title: stripHtml(item.title),
 			authors: item.authors,
 			url: item.url,
 			year,
-			session,
+			acceptedDate: item.acceptedDate,
+			abstract: item.abstract,
+			presentationType: item.presentationType,
+			rolling: opts.rolling,
+			session: opts.session,
 			award: awardKeys.has(key),
 			status: getLinkStatus(item.url),
 			statusSince: getStatusSince(item.url)
@@ -92,8 +157,13 @@ export function getAllSubmissions(): Submission[] {
 	};
 
 	for (const data of Object.values(years)) {
+		for (const item of data.submissions ?? []) {
+			add(item, data.year, { rolling: Boolean(data.rolling) });
+		}
 		for (const session of data.program) {
-			for (const item of session.items ?? []) add(item, data.year, stripHtml(session.title));
+			for (const item of session.items ?? []) {
+				add(item, data.year, { session: stripHtml(session.title), rolling: Boolean(data.rolling) });
+			}
 		}
 	}
 	for (const [year, items] of Object.entries(bestPapers)) {
@@ -101,6 +171,21 @@ export function getAllSubmissions(): Submission[] {
 	}
 
 	return [...byKey.values()];
+}
+
+/** Accepted submissions for a single year, sorted newest-first. */
+export function getSubmissionsForYear(year: number): Submission[] {
+	return sortSubmissions(getAllSubmissions().filter((s) => s.year === year));
+}
+
+export function getRollingSubmissions(year: number): AcceptedSubmission[] {
+	const list = years[year]?.submissions ?? [];
+	return [...list].sort((a, b) => {
+		const aDate = a.acceptedDate ?? '';
+		const bDate = b.acceptedDate ?? '';
+		if (aDate !== bDate) return bDate.localeCompare(aDate);
+		return a.title.localeCompare(b.title);
+	});
 }
 
 /** Every external URL we want to monitor: submissions, Hall of Fame, and examples. */
