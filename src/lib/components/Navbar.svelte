@@ -41,8 +41,6 @@
 		.sort((a, b) => b - a);
 
 	let pathname = $derived($page.url.pathname);
-	let isWorkshopPage = $derived(pathname === '/workshop' || /^\/\d{4}$/.test(pathname));
-	let workshopAnchorPrefix = $derived(isWorkshopPage ? '' : '/workshop');
 
 	function navLinkClass(active: boolean): string {
 		return active
@@ -70,11 +68,6 @@
 					Workshop ({latestYear})
 				</a>
 				<a href="/submit" class={navLinkClass(pathname === '/submit')}>Submit</a>
-				<a
-					href="{workshopAnchorPrefix}#orga"
-					class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-					>Organizers</a
-				>
 
 				<!-- Past Years Dropdown -->
 				<div class="relative ml-2 year-dropdown-container">
@@ -200,12 +193,6 @@
 				onclick={closeMenu}
 				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
 				>Submit</a
-			>
-			<a
-				href="{workshopAnchorPrefix}#orga"
-				onclick={closeMenu}
-				class="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-				>Organizers</a
 			>
 			<button
 				type="button"
